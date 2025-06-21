@@ -1,7 +1,7 @@
 #include "xunSub.h"
 
 
-//¼ÆÊ±£¬1msÒ»´Î
+//è®¡æ—¶ï¼Œ1msä¸€æ¬¡
 u16 xunSub_jishi[10]={0,0,0,0,0,0,0,0,0,0};
 u16 xunSub_num;
 void xunSub_timer(u16 mme)

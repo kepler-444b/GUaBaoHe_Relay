@@ -2,14 +2,14 @@
 #include "key.h"
 
 extern Pro_flag_s MCU_flag;
-//¼ÌµçÆ÷¶ÔÓ¦Î»
+//ç»§ç”µå™¨å¯¹åº”ä½
 u8 relaySX_tab[24]=
 {
 	k1_buf2,k2_buf2,k3_buf2,k4_buf2,k5_buf2,k6_buf2,k7_buf2,k8_buf1,
 	k9_buf1,k10_buf1,k11_buf1,k12_buf1,k13_buf1,k14_buf1,k15_buf0,k16_buf0,
 	k17_buf0,k18_buf0,k19_buf0,k20_buf0,k21_buf2,kNC1_buf0,kNC2_buf0,kNC3_buf1
 };
-//BUF¶ÔÓ¦Î»
+//BUFå¯¹åº”ä½
 u8 relayBF_tab[24]=
 {
 	2,2,2,2,2,2,2,1,
@@ -40,8 +40,8 @@ void led_set(uchar led_No,uchar open)
 }
 
 u16 led_shan_num=0;         
-u8 S_timers;            //ÉÁË¸´ÎÊý
-u16 S_PIN;              //ÉÁË¸ÆµÂÊ
+u8 S_timers;            //é—ªçƒæ¬¡æ•°
+u16 S_PIN;              //é—ªçƒé¢‘çŽ‡
 void led_shan_sub(void)
 {
     if(S_timers>0)
@@ -169,7 +169,7 @@ u8 relay_read(u8 relay_g)
 
 
 
-//×Ü¿ª¹Ø
+//æ€»å¼€å…³
 void relay_closeA(u32 relay1_24, u8 open_g)
 {
 	u8 i;
@@ -185,7 +185,7 @@ void relay_closeA(u32 relay1_24, u8 open_g)
 
 
 
-//×Ü¿ª¹Ø
+//æ€»å¼€å…³
 void relay_closeA_SBuf(u8 *buf, u8 open_g)
 {
 	u8 i,j;

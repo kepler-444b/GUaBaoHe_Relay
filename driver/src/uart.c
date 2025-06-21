@@ -100,11 +100,11 @@ static stc_uart_instance_data_t m_astcUartInstanceDataLut[] =
 };
 /**
  ******************************************************************************
- ** \brief  UART0/1Í¨µÀ Ïà¹ØµØÖ·»ñÈ¡
+ ** \brief  UART0/1é€šé“ ç›¸å…³åœ°å€è·å–
  **
- ** \param [in] u8IdxÍ¨µÀºÅ
+ ** \param [in] u8Idxé€šé“å·
  **
- ** \retval Í¨µÀ¶ÔÓ¦µÄµØÖ·½á¹¹
+ ** \retval é€šé“å¯¹åº”çš„åœ°å€ç»“æ„
  **
  ******************************************************************************/
 static stc_uart_instance_data_t* UartGetInternDataPtr(uint8_t u8Idx)
@@ -124,12 +124,12 @@ static stc_uart_instance_data_t* UartGetInternDataPtr(uint8_t u8Idx)
 }
 /**
  ******************************************************************************
- ** \brief  UARTÍ¨ĞÅÖĞ¶ÏÊ¹ÄÜº¯ÊıÉèÖÃ
+ ** \brief  UARTé€šä¿¡ä¸­æ–­ä½¿èƒ½å‡½æ•°è®¾ç½®
  **
- ** \param [in] u8IdxÍ¨µÀºÅ£¬enIrqSel·¢ËÍor½ÓÊÕÖĞ¶ÏÊ¹ÄÜ
+ ** \param [in] u8Idxé€šé“å·ï¼ŒenIrqSelå‘é€oræ¥æ”¶ä¸­æ–­ä½¿èƒ½
  **
- ** \retval OKÅäÖÃ³É¹¦
- **\retval ErrorInvalidParameterÅäÖÃÊ§°Ü
+ ** \retval OKé…ç½®æˆåŠŸ
+ **\retval ErrorInvalidParameteré…ç½®å¤±è´¥
  ******************************************************************************/
 en_result_t Uart_EnableIrq(uint8_t u8Idx,
                            en_uart_irq_sel_t enIrqSel)
@@ -157,12 +157,12 @@ en_result_t Uart_EnableIrq(uint8_t u8Idx,
 }
 /**
  ******************************************************************************
- ** \brief  UARTÍ¨ĞÅÖĞ¶Ï½ûÖ¹º¯ÊıÉèÖÃ
+ ** \brief  UARTé€šä¿¡ä¸­æ–­ç¦æ­¢å‡½æ•°è®¾ç½®
  **
- ** \param [in] u8IdxÍ¨µÀºÅ£¬enIrqSel·¢ËÍor½ÓÊÕÖĞ¶Ï½ûÖ¹
+ ** \param [in] u8Idxé€šé“å·ï¼ŒenIrqSelå‘é€oræ¥æ”¶ä¸­æ–­ç¦æ­¢
  **
- ** \retval OKÅäÖÃ³É¹¦
- **\retval ErrorInvalidParameterÅäÖÃÊ§°Ü
+ ** \retval OKé…ç½®æˆåŠŸ
+ **\retval ErrorInvalidParameteré…ç½®å¤±è´¥
  ******************************************************************************/
 en_result_t Uart_DisableIrq(uint8_t u8Idx, 
                             en_uart_irq_sel_t enIrqSel)
@@ -193,12 +193,12 @@ en_result_t Uart_DisableIrq(uint8_t u8Idx,
 }
 /**
  ******************************************************************************
- ** \brief  UARTÍ¨µÀ4ÖÖÄ£Ê½ÅäÖÃ
+ ** \brief  UARTé€šé“4ç§æ¨¡å¼é…ç½®
  **
- ** \param [in] u8IdxÍ¨µÀºÅ£¬modeÄÄÖÖÄ£Ê½
+ ** \param [in] u8Idxé€šé“å·ï¼Œmodeå“ªç§æ¨¡å¼
  **
- ** \retval OKÅäÖÃ³É¹¦
- **\retval ErrorInvalidParameterÅäÖÃÊ§°Ü
+ ** \retval OKé…ç½®æˆåŠŸ
+ **\retval ErrorInvalidParameteré…ç½®å¤±è´¥
  ******************************************************************************/
 en_result_t Uart_SetMode(uint8_t u8Idx,en_uart_mode_t enMode)
 {
@@ -215,12 +215,12 @@ en_result_t Uart_SetMode(uint8_t u8Idx,en_uart_mode_t enMode)
 }
 /**
  ******************************************************************************
- ** \brief  UARTÍ¨µÀ¶àÖ÷»úÄ£Ê½ÅäÖÃ
+ ** \brief  UARTé€šé“å¤šä¸»æœºæ¨¡å¼é…ç½®
  **
- ** \param [in] u8IdxÍ¨µÀºÅ£¬stcMultiConfig¶àÖ÷»úÄ£Ê½½á¹¹
+ ** \param [in] u8Idxé€šé“å·ï¼ŒstcMultiConfigå¤šä¸»æœºæ¨¡å¼ç»“æ„
  **
- ** \retval OKÅäÖÃ³É¹¦
- **\retval ErrorInvalidParameterÅäÖÃÊ§°Ü
+ ** \retval OKé…ç½®æˆåŠŸ
+ **\retval ErrorInvalidParameteré…ç½®å¤±è´¥
  ******************************************************************************/
 en_result_t Uart_SetMultiMode(uint8_t u8Idx,stc_uart_multimode_t* pstcMultiConfig)
 {
@@ -244,12 +244,12 @@ en_result_t Uart_SetMultiMode(uint8_t u8Idx,stc_uart_multimode_t* pstcMultiConfi
 }
 /**
  ******************************************************************************
- ** \brief  UARTÍ¨µÀ¶àÖ÷»úÄ£Ê½·¢ËÍÊı¾İ/µØÖ·Ö¡»òÕßÆæÅ¼Ğ£ÑéÅäÖÃTB8
+ ** \brief  UARTé€šé“å¤šä¸»æœºæ¨¡å¼å‘é€æ•°æ®/åœ°å€å¸§æˆ–è€…å¥‡å¶æ ¡éªŒé…ç½®TB8
  **
- ** \param [in] u8IdxÍ¨µÀºÅ£¬tb8Êı¾İorµØÖ·Ö¡»òÕßÆæÅ¼Ğ£Ñé
+ ** \param [in] u8Idxé€šé“å·ï¼Œtb8æ•°æ®oråœ°å€å¸§æˆ–è€…å¥‡å¶æ ¡éªŒ
  **
- ** \retval OKÅäÖÃ³É¹¦
- **\retval ErrorInvalidParameterÅäÖÃÊ§°Ü
+ ** \retval OKé…ç½®æˆåŠŸ
+ **\retval ErrorInvalidParameteré…ç½®å¤±è´¥
  ******************************************************************************/
 en_result_t Uart_SetMMDOrCk(uint8_t u8Idx,en_uart_mmdorck_t enTb8)
 {
@@ -265,12 +265,12 @@ en_result_t Uart_SetMMDOrCk(uint8_t u8Idx,en_uart_mmdorck_t enTb8)
 }
 /**
  ******************************************************************************
- ** \brief »ñÈ¡RB8ÊıÖµ
+ ** \brief è·å–RB8æ•°å€¼
  **
- ** \param [in] u8IdxÍ¨µÀºÅ
+ ** \param [in] u8Idxé€šé“å·
  **
  ** \retval RB8
- **\retval ErrorInvalidParameterÅäÖÃÊ§°Ü
+ **\retval ErrorInvalidParameteré…ç½®å¤±è´¥
  ******************************************************************************/
 boolean_t Uart_GetRb8(uint8_t u8Idx)
 {
@@ -285,11 +285,11 @@ boolean_t Uart_GetRb8(uint8_t u8Idx)
 }
 /**
  ******************************************************************************
- ** \brief ¼ÆËã×Ö½ÚÊı¾İ1µÄ¸öÊı
+ ** \brief è®¡ç®—å­—èŠ‚æ•°æ®1çš„ä¸ªæ•°
  **
- ** \param u8Data¼ÆËãÊı¾İ
+ ** \param u8Dataè®¡ç®—æ•°æ®
  **
- ** \retval ¸öÊı
+ ** \retval ä¸ªæ•°
  ******************************************************************************/
 en_result_t Uart_SetTb8(uint8_t u8Idx,en_uart_check_t enCheck,uint8_t u8Data)
 {
@@ -335,11 +335,11 @@ en_result_t Uart_SetTb8(uint8_t u8Idx,en_uart_check_t enCheck,uint8_t u8Data)
 }
 /**
  ******************************************************************************
- ** \brief ¼ÆËã½ÓÊÕ×Ö½ÚÆæÅ¼Ğ£ÑéÊÇ·ñÕıÈ·
+ ** \brief è®¡ç®—æ¥æ”¶å­—èŠ‚å¥‡å¶æ ¡éªŒæ˜¯å¦æ­£ç¡®
  **
- ** \param u8IdxÍ¨µÀ£¬enCheckÆæÅ¼Ğ£Ñé·½Ê½£¬u8RecvĞ£ÑéÊı¾İ
+ ** \param u8Idxé€šé“ï¼ŒenCheckå¥‡å¶æ ¡éªŒæ–¹å¼ï¼Œu8Recvæ ¡éªŒæ•°æ®
  **
- ** \retval Error»òÕß³É¹¦Ok
+ ** \retval Erroræˆ–è€…æˆåŠŸOk
  ******************************************************************************/
 en_result_t Uart_CheckEvenOrOdd(uint8_t u8Idx,en_uart_check_t enCheck,uint8_t u8Recv)
 {
@@ -397,12 +397,12 @@ en_result_t Uart_CheckEvenOrOdd(uint8_t u8Idx,en_uart_check_t enCheck,uint8_t u8
 }
 /**
  ******************************************************************************
- ** \brief  UARTÍ¨µÀ¶àÖ÷»úÄ£Ê½´Ó»úµØÖ·ÅäÖÃº¯Êı
+ ** \brief  UARTé€šé“å¤šä¸»æœºæ¨¡å¼ä»æœºåœ°å€é…ç½®å‡½æ•°
  **
- ** \param [in] u8IdxÍ¨µÀºÅ£¬addrµØÖ·
+ ** \param [in] u8Idxé€šé“å·ï¼Œaddråœ°å€
  **
- ** \retval OKÅäÖÃ³É¹¦
- **\retval ErrorInvalidParameterÅäÖÃÊ§°Ü
+ ** \retval OKé…ç½®æˆåŠŸ
+ **\retval ErrorInvalidParameteré…ç½®å¤±è´¥
  ******************************************************************************/
 en_result_t Uart_SetSaddr(uint8_t u8Idx,uint8_t u8Addr)
 {
@@ -418,12 +418,12 @@ en_result_t Uart_SetSaddr(uint8_t u8Idx,uint8_t u8Addr)
 }
 /**
  ******************************************************************************
- ** \brief  UARTÍ¨µÀ¶àÖ÷»úÄ£Ê½´Ó»úÑÚÂëÅäÖÃº¯Êı
+ ** \brief  UARTé€šé“å¤šä¸»æœºæ¨¡å¼ä»æœºæ©ç é…ç½®å‡½æ•°
  **
- ** \param [in] u8IdxÍ¨µÀºÅ£¬addrenµØÖ·ÑÚÂë
+ ** \param [in] u8Idxé€šé“å·ï¼Œaddrenåœ°å€æ©ç 
  **
- ** \retval OKÅäÖÃ³É¹¦
- **\retval ErrorInvalidParameterÅäÖÃÊ§°Ü
+ ** \retval OKé…ç½®æˆåŠŸ
+ **\retval ErrorInvalidParameteré…ç½®å¤±è´¥
  ******************************************************************************/
 en_result_t Uart_SetSaddrEn(uint8_t u8Idx,uint8_t u8Addren)
 {
@@ -439,12 +439,12 @@ en_result_t Uart_SetSaddrEn(uint8_t u8Idx,uint8_t u8Addren)
 }
 /**
  ******************************************************************************
- ** \brief  UARTÍ¨µÀ²¨ÌØÂÊÅäÖÃ
+ ** \brief  UARTé€šé“æ³¢ç‰¹ç‡é…ç½®
  **
- ** \param [in] u8IdxÍ¨µÀºÅ£¬u32pclkÊ±ÖÓÔ´£¬stcBaud²¨ÌØÂÊÅäÖÃ½á¹¹
+ ** \param [in] u8Idxé€šé“å·ï¼Œu32pclkæ—¶é’Ÿæºï¼ŒstcBaudæ³¢ç‰¹ç‡é…ç½®ç»“æ„
  **
- ** \retval ¶¨Ê±Æ÷ÅäÖÃÖµ
- ** \retval 0,»ñÈ¡ÖµÊ§°Ü
+ ** \retval å®šæ—¶å™¨é…ç½®å€¼
+ ** \retval 0,è·å–å€¼å¤±è´¥
  ******************************************************************************/
 uint16_t Uart_SetBaudRate(uint8_t u8Idx,uint32_t u32pclk,stc_uart_baud_config_t* pstcBaud)
 {
@@ -464,7 +464,7 @@ uint16_t Uart_SetBaudRate(uint8_t u8Idx,uint32_t u32pclk,stc_uart_baud_config_t*
             break;
         case UartMode1:
         case UartMode3:
-            u16tmload = 0x10000-((u32pclk*(pstcBaud->bDbaud+1))/(pstcBaud->u32Baud*32));//µ¥Ë«±¶²¨ÌØÂÊ£¬¶¨Ê±Æ÷ÅäÖÃ
+            u16tmload = 0x10000-((u32pclk*(pstcBaud->bDbaud+1))/(pstcBaud->u32Baud*32));//å•åŒå€æ³¢ç‰¹ç‡ï¼Œå®šæ—¶å™¨é…ç½®
             break;
         default:
             break; 
@@ -473,12 +473,12 @@ uint16_t Uart_SetBaudRate(uint8_t u8Idx,uint32_t u32pclk,stc_uart_baud_config_t*
 }
 /**
  ******************************************************************************
- ** \brief  UARTÍ¨µÀ·¢ËÍ»ò½ÓÊÕÊ¹ÄÜÉèÖÃ
+ ** \brief  UARTé€šé“å‘é€æˆ–æ¥æ”¶ä½¿èƒ½è®¾ç½®
  **
- ** \param [in] u8IdxÍ¨µÀºÅ£¬enFunc·¢ËÍ»ò½ÓÊÕ
+ ** \param [in] u8Idxé€šé“å·ï¼ŒenFuncå‘é€æˆ–æ¥æ”¶
  **
- ** \retval OKÅäÖÃ³É¹¦
- **\retval ErrorInvalidParameterÅäÖÃÊ§°Ü
+ ** \retval OKé…ç½®æˆåŠŸ
+ **\retval ErrorInvalidParameteré…ç½®å¤±è´¥
  ******************************************************************************/
 en_result_t Uart_EnableFunc(uint8_t u8Idx, en_uart_func_t enFunc)
 {
@@ -494,12 +494,12 @@ en_result_t Uart_EnableFunc(uint8_t u8Idx, en_uart_func_t enFunc)
 }
 /**
  ******************************************************************************
- ** \brief  UARTÍ¨µÀÍ¨ĞÅ×´Ì¬»ñÈ¡
+ ** \brief  UARTé€šé“é€šä¿¡çŠ¶æ€è·å–
  **
- ** \param [in] u8IdxÍ¨µÀºÅ£¬enStatus»ñÈ¡ÄÄ¸ö×´Ì¬
+ ** \param [in] u8Idxé€šé“å·ï¼ŒenStatusè·å–å“ªä¸ªçŠ¶æ€
  **
- ** \retval ×´Ì¬Öµ
- **\retval ErrorInvalidParameter»ñÈ¡Ê§°Ü
+ ** \retval çŠ¶æ€å€¼
+ **\retval ErrorInvalidParameterè·å–å¤±è´¥
  ******************************************************************************/
 boolean_t Uart_GetStatus(uint8_t u8Idx,en_uart_status_t enStatus)
 {
@@ -510,7 +510,7 @@ boolean_t Uart_GetStatus(uint8_t u8Idx,en_uart_status_t enStatus)
     pstcData = UartGetInternDataPtr(u8Idx);
     if (NULL == pstcData)
     {
-        return ErrorInvalidParameter;//4£¬ÓÃ»§Ö»ĞèÅĞ¶Ï0»ò1
+        return ErrorInvalidParameter;//4ï¼Œç”¨æˆ·åªéœ€åˆ¤æ–­0æˆ–1
     }
     switch(enStatus)
     {
@@ -530,12 +530,12 @@ boolean_t Uart_GetStatus(uint8_t u8Idx,en_uart_status_t enStatus)
 }
 /**
  ******************************************************************************
- ** \brief  UARTÍ¨µÀÍ¨ĞÅ×´Ì¬Çå³ı
+ ** \brief  UARTé€šé“é€šä¿¡çŠ¶æ€æ¸…é™¤
  **
- ** \param [in] u8IdxÍ¨µÀºÅ£¬enStatusÇå³ıÄÄ¸ö×´Ì¬
+ ** \param [in] u8Idxé€šé“å·ï¼ŒenStatusæ¸…é™¤å“ªä¸ªçŠ¶æ€
  **
- ** \retval ×´Ì¬Öµ
- **\retval ErrorInvalidParameterÇå³ıÊ§°Ü
+ ** \retval çŠ¶æ€å€¼
+ **\retval ErrorInvalidParameteræ¸…é™¤å¤±è´¥
  ******************************************************************************/
 en_result_t Uart_ClrStatus(uint8_t u8Idx,en_uart_status_t enStatus)
 {
@@ -565,12 +565,12 @@ en_result_t Uart_ClrStatus(uint8_t u8Idx,en_uart_status_t enStatus)
 }
 /**
  ******************************************************************************
- ** \brief  UARTÍ¨µÀ·¢ËÍÊı¾İº¯Êı,²éÑ¯·½Ê½µ÷ÓÃ´Ëº¯Êı£¬ÖĞ¶Ï·½Ê½·¢ËÍ²»ÊÊÓÃ
+ ** \brief  UARTé€šé“å‘é€æ•°æ®å‡½æ•°,æŸ¥è¯¢æ–¹å¼è°ƒç”¨æ­¤å‡½æ•°ï¼Œä¸­æ–­æ–¹å¼å‘é€ä¸é€‚ç”¨
  **
- ** \param [in] u8IdxÍ¨µÀºÅ£¬Data·¢ËÍÊı¾İ
+ ** \param [in] u8Idxé€šé“å·ï¼ŒDataå‘é€æ•°æ®
  **
- ** \retval Ok·¢ËÍ³É¹¦
- **\retval ErrorInvalidParameter·¢ËÍÊ§°Ü
+ ** \retval Okå‘é€æˆåŠŸ
+ **\retval ErrorInvalidParameterå‘é€å¤±è´¥
  ******************************************************************************/
 en_result_t Uart_SendData(uint8_t u8Idx, uint8_t u8Data)
 {
@@ -590,12 +590,12 @@ en_result_t Uart_SendData(uint8_t u8Idx, uint8_t u8Data)
 }
 /**
  ******************************************************************************
- ** \brief  UARTÍ¨µÀ½ÓÊÕÊı¾İº¯Êı
+ ** \brief  UARTé€šé“æ¥æ”¶æ•°æ®å‡½æ•°
  **
- ** \param [in] u8IdxÍ¨µÀºÅ
+ ** \param [in] u8Idxé€šé“å·
  **
- ** \retval ½ÓÊÕÊı¾İ
- **\retval ErrorInvalidParameter½ÓÊÕÊ§°Ü
+ ** \retval æ¥æ”¶æ•°æ®
+ **\retval ErrorInvalidParameteræ¥æ”¶å¤±è´¥
  ******************************************************************************/
 uint8_t Uart_ReceiveData(uint8_t u8Idx)
 {
@@ -610,11 +610,11 @@ uint8_t Uart_ReceiveData(uint8_t u8Idx)
 }
 /**
  ******************************************************************************
- ** \brief  UARTÍ¨µÀÖĞ¶Ï´¦Àíº¯Êı
+ ** \brief  UARTé€šé“ä¸­æ–­å¤„ç†å‡½æ•°
  **
- ** \param [in] u8ParamÍ¨µÀºÅ
+ ** \param [in] u8Paramé€šé“å·
  **
- ** \retval ÎŞ
+ ** \retval æ— 
  **
  ******************************************************************************/
 void Uart_IRQHandler(uint8_t u8Param)
@@ -632,7 +632,7 @@ void Uart_IRQHandler(uint8_t u8Param)
         {
             pstcData->stcUartInternIrqCb.pfnRxErrIrqCb();
         }
-        return;//ÈôÆæÅ¼Ğ£Ñé³ö´íÔò²»½øĞĞºóĞøÊı¾İ´¦Àí
+        return;//è‹¥å¥‡å¶æ ¡éªŒå‡ºé”™åˆ™ä¸è¿›è¡Œåç»­æ•°æ®å¤„ç†
     }
     if(1 == pstcData->pstcInstance->ISR_f.RI)
     {
@@ -653,11 +653,11 @@ void Uart_IRQHandler(uint8_t u8Param)
 }
 /**
  ******************************************************************************
- ** \brief  UARTÍ¨µÀÊ¹ÄÜÄÚºËNVICÖĞ¶Ï
+ ** \brief  UARTé€šé“ä½¿èƒ½å†…æ ¸NVICä¸­æ–­
  **
- ** \param [in] u8IdxÍ¨µÀºÅ
+ ** \param [in] u8Idxé€šé“å·
  **
- ** \retval ÎŞ
+ ** \retval æ— 
  **
  ******************************************************************************/
 static void UartInitNvic(uint8_t u8Idx)
@@ -673,11 +673,11 @@ static void UartInitNvic(uint8_t u8Idx)
 }
 /**
  ******************************************************************************
- ** \brief  UARTÍ¨µÀ½ûÖ¹ÄÚºËNVICÖĞ¶Ï
+ ** \brief  UARTé€šé“ç¦æ­¢å†…æ ¸NVICä¸­æ–­
  **
- ** \param [in] u8IdxÍ¨µÀºÅ
+ ** \param [in] u8Idxé€šé“å·
  **
- ** \retval ÎŞ
+ ** \retval æ— 
  **
  ******************************************************************************/
 static void UartDeInitNvic(uint8_t u8Idx)
@@ -693,12 +693,12 @@ static void UartDeInitNvic(uint8_t u8Idx)
 }
 /**
  ******************************************************************************
- ** \brief  UARTÍ¨µÀ³õÊ¼»¯º¯Êı
+ ** \brief  UARTé€šé“åˆå§‹åŒ–å‡½æ•°
  **
- ** \param [in] u8IdxÍ¨µÀºÅ£¬pstcConfig³õÊ¼»¯½á¹¹Ìå
+ ** \param [in] u8Idxé€šé“å·ï¼ŒpstcConfigåˆå§‹åŒ–ç»“æ„ä½“
  **
- ** \retval OKÅäÖÃ³É¹¦
- **\retval ErrorInvalidParameterÅäÖÃÊ§°Ü
+ ** \retval OKé…ç½®æˆåŠŸ
+ **\retval ErrorInvalidParameteré…ç½®å¤±è´¥
  ******************************************************************************/
 en_result_t Uart_Init(uint8_t u8Idx, 
                       stc_uart_config_t* pstcConfig)

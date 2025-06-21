@@ -386,14 +386,14 @@
           <GroupName>common</GroupName>
           <Files>
             <File>
-              <FileName>system_hc32l110.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\common\system_hc32l110.c</FilePath>
-            </File>
-            <File>
               <FileName>startup_hc32l110.s</FileName>
               <FileType>2</FileType>
               <FilePath>..\common\startup_hc32l110.s</FilePath>
+            </File>
+            <File>
+              <FileName>system_hc32l110.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\common\system_hc32l110.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -461,6 +461,11 @@
               <FilePath>..\driver\src\interrupts_hc32l110.c</FilePath>
             </File>
             <File>
+              <FileName>wdt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\driver\src\wdt.c</FilePath>
+            </File>
+            <File>
               <FileName>clk.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\driver\src\clk.c</FilePath>
@@ -479,11 +484,6 @@
               <FileName>flash.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\driver\src\flash.c</FilePath>
-            </File>
-            <File>
-              <FileName>wdt.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\driver\src\wdt.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -88,15 +88,15 @@
 
 /**
  *******************************************************************************
- ** \brief GPIO Ä£Äâ¹¦ÄÜÉèÖÃ
+ ** \brief GPIO æ¨¡æ‹ŸåŠŸèƒ½è®¾ç½®
  **
- ** \param [in]  u8Port          IO Port¿Ú
- ** \param [in]  u8Pin           IO Pin½Å
- ** \param [in]  bFlag           TRUE :     Ä£Äâ¹¦ÄÜ
- **                              FALSE:     Êı×Ö¹¦ÄÜ
+ ** \param [in]  u8Port          IO Portå£
+ ** \param [in]  u8Pin           IO Pinè„š
+ ** \param [in]  bFlag           TRUE :     æ¨¡æ‹ŸåŠŸèƒ½
+ **                              FALSE:     æ•°å­—åŠŸèƒ½
  **
- ** \retval Ok         ÉèÖÃ³É¹¦
- **         ÆäËûÖµ     ÉèÖÃÊ§°Ü
+ ** \retval Ok         è®¾ç½®æˆåŠŸ
+ **         å…¶ä»–å€¼     è®¾ç½®å¤±è´¥
  ******************************************************************************/
 en_result_t Gpio_SetAnalog(uint8_t u8Port, uint8_t u8Pin, boolean_t bFlag)
 {
@@ -108,14 +108,14 @@ en_result_t Gpio_SetAnalog(uint8_t u8Port, uint8_t u8Pin, boolean_t bFlag)
 
 /**
  *******************************************************************************
- ** \brief GPIO ³õÊ¼»¯IO
+ ** \brief GPIO åˆå§‹åŒ–IO
  **
- ** \param [in]  u8Port          IO Port¿Ú
- ** \param [in]  u8Pin           IO Pin½Å
- ** \param [in]  enDir           IO ·½Ïò£¨ÊäÈë»òÊä³ö£©
+ ** \param [in]  u8Port          IO Portå£
+ ** \param [in]  u8Pin           IO Pinè„š
+ ** \param [in]  enDir           IO æ–¹å‘ï¼ˆè¾“å…¥æˆ–è¾“å‡ºï¼‰
  **
- ** \retval Ok         ÉèÖÃ³É¹¦
- **         ÆäËûÖµ     ÉèÖÃÊ§°Ü
+ ** \retval Ok         è®¾ç½®æˆåŠŸ
+ **         å…¶ä»–å€¼     è®¾ç½®å¤±è´¥
  ******************************************************************************/
 en_result_t Gpio_InitIO(uint8_t u8Port, uint8_t u8Pin,
                         en_gpio_dir_t enDir)
@@ -141,19 +141,19 @@ en_result_t Gpio_InitIO(uint8_t u8Port, uint8_t u8Pin,
 
 /**
  *******************************************************************************
- ** \brief   GPIO ³õÊ¼»¯2 
+ ** \brief   GPIO åˆå§‹åŒ–2 
  ** 
- ** \param   [in]  u8Port             IO Port¿Ú
- ** \param   [in]  u8Pin              IO Pin½Å
- ** \param   [in]  enDir              IO ·½Ïò£¨ÊäÈë»òÊä³ö£©
- ** \param   [in]  bPullup            ÉÏÀ­¿ª¹Ø
- ** \param   [in]  bPulldown          ÏÂÀ­¿ª¹Ø
- ** \param   [in]  bOdr               ¿ªÂ©¿ª¹Ø
- ** \param   [in]  bDrive             Çı¶¯ÄÜÁ¦ 
- **                                   0 = ¸ß
- **                                   1 = µÍ
- ** \retval     Ok         ÉèÖÃ³É¹¦
- **             ÆäËûÖµ     ÉèÖÃÊ§°Ü
+ ** \param   [in]  u8Port             IO Portå£
+ ** \param   [in]  u8Pin              IO Pinè„š
+ ** \param   [in]  enDir              IO æ–¹å‘ï¼ˆè¾“å…¥æˆ–è¾“å‡ºï¼‰
+ ** \param   [in]  bPullup            ä¸Šæ‹‰å¼€å…³
+ ** \param   [in]  bPulldown          ä¸‹æ‹‰å¼€å…³
+ ** \param   [in]  bOdr               å¼€æ¼å¼€å…³
+ ** \param   [in]  bDrive             é©±åŠ¨èƒ½åŠ› 
+ **                                   0 = é«˜
+ **                                   1 = ä½
+ ** \retval     Ok         è®¾ç½®æˆåŠŸ
+ **             å…¶ä»–å€¼     è®¾ç½®å¤±è´¥
  ******************************************************************************/
 en_result_t Gpio_InitIOExt(uint8_t u8Port, uint8_t u8Pin,
                            en_gpio_dir_t enDir,
@@ -186,14 +186,14 @@ en_result_t Gpio_InitIOExt(uint8_t u8Port, uint8_t u8Pin,
 
 /**
  *******************************************************************************
- ** \brief GPIO IOÊä³öÖµÉè¶¨
+ ** \brief GPIO IOè¾“å‡ºå€¼è®¾å®š
  **
- ** \param [in]  u8Port          IO Port¿Ú
- ** \param [in]  u8Pin           IO Pin½Å
- ** \param [in]  bVal            Êä³öµçÆ½¸ßµÍ
+ ** \param [in]  u8Port          IO Portå£
+ ** \param [in]  u8Pin           IO Pinè„š
+ ** \param [in]  bVal            è¾“å‡ºç”µå¹³é«˜ä½
  **
- ** \retval Ok         ÉèÖÃ³É¹¦
- **         ÆäËûÖµ     ÉèÖÃÊ§°Ü
+ ** \retval Ok         è®¾ç½®æˆåŠŸ
+ **         å…¶ä»–å€¼     è®¾ç½®å¤±è´¥
  ******************************************************************************/
 void Gpio_SetIO(uint8_t u8Port, uint8_t u8Pin, boolean_t bVal)
 {
@@ -205,12 +205,12 @@ void Gpio_SetIO(uint8_t u8Port, uint8_t u8Pin, boolean_t bVal)
 
 /**
  *******************************************************************************
- ** \brief GPIO IOÊäÈëÖµ»ñÈ¡
+ ** \brief GPIO IOè¾“å…¥å€¼è·å–
  **
- ** \param [in]  u8Port          IO Port¿Ú
- ** \param [in]  u8Pin           IO Pin½Å
+ ** \param [in]  u8Port          IO Portå£
+ ** \param [in]  u8Pin           IO Pinè„š
  **
- ** \retval boolean_t            IOµçÆ½¸ßµÍ
+ ** \retval boolean_t            IOç”µå¹³é«˜ä½
  ******************************************************************************/
 boolean_t Gpio_GetIO(uint8_t u8Port, uint8_t u8Pin)
 {
@@ -249,12 +249,12 @@ en_result_t _GpioEnableIrq(uint8_t u8Port,
 
 /**
  *******************************************************************************
- ** \brief GPIO IOÖĞ¶ÏÊ¹ÄÜ
+ ** \brief GPIO IOä¸­æ–­ä½¿èƒ½
  **
- ** \param [in]  u8Port          IO Port¿Ú
- ** \param [in]  u8Pin           IO Pin½Å
- ** \param [in]  enType          ÖĞ¶ÏÊ¹ÄÜÀàĞÍ
- ** \retval      Ok            ÉèÖÃ³É¹¦
+ ** \param [in]  u8Port          IO Portå£
+ ** \param [in]  u8Pin           IO Pinè„š
+ ** \param [in]  enType          ä¸­æ–­ä½¿èƒ½ç±»å‹
+ ** \retval      Ok            è®¾ç½®æˆåŠŸ
  ******************************************************************************/
 en_result_t Gpio_EnableIrq(uint8_t u8Port,
                            uint8_t u8Pin,
@@ -267,12 +267,12 @@ en_result_t Gpio_EnableIrq(uint8_t u8Port,
 
 /**
  *******************************************************************************
- ** \brief GPIO IOÖĞ¶Ï³ıÄÜ
+ ** \brief GPIO IOä¸­æ–­é™¤èƒ½
  **
- ** \param [in]  u8Port          IO Port¿Ú
- ** \param [in]  u8Pin           IO Pin½Å
- ** \param [in]  enType          ÖĞ¶ÏÊ¹ÄÜÀàĞÍ
- ** \retval      Ok            ÉèÖÃ³É¹¦
+ ** \param [in]  u8Port          IO Portå£
+ ** \param [in]  u8Pin           IO Pinè„š
+ ** \param [in]  enType          ä¸­æ–­ä½¿èƒ½ç±»å‹
+ ** \retval      Ok            è®¾ç½®æˆåŠŸ
  ******************************************************************************/
 en_result_t Gpio_DisableIrq(uint8_t u8Port, uint8_t u8Pin, en_gpio_irqtype_t enType)
 {
@@ -283,12 +283,12 @@ en_result_t Gpio_DisableIrq(uint8_t u8Port, uint8_t u8Pin, en_gpio_irqtype_t enT
 
 /**
  *******************************************************************************
- ** \brief GPIO »ñµÃIOÖĞ¶Ï×´Ì¬
+ ** \brief GPIO è·å¾—IOä¸­æ–­çŠ¶æ€
  **
- ** \param [in]  u8Port          IO Port¿Ú
- ** \param [in]  u8Pin           IO Pin½Å
+ ** \param [in]  u8Port          IO Portå£
+ ** \param [in]  u8Pin           IO Pinè„š
  **
- ** \retval      IOÖĞ¶Ï×´Ì¬¿ª¹Ø
+ ** \retval      IOä¸­æ–­çŠ¶æ€å¼€å…³
  ******************************************************************************/
 boolean_t Gpio_GetIrqStat(uint8_t u8Port, uint8_t u8Pin)
 {
@@ -298,12 +298,12 @@ boolean_t Gpio_GetIrqStat(uint8_t u8Port, uint8_t u8Pin)
 
 /**
  *******************************************************************************
- ** \brief GPIO Çå³ıIOÖĞ¶Ï×´Ì¬
+ ** \brief GPIO æ¸…é™¤IOä¸­æ–­çŠ¶æ€
  **
- ** \param [in]  u8Port          IO Port¿Ú
- ** \param [in]  u8Pin           IO Pin½Å
+ ** \param [in]  u8Port          IO Portå£
+ ** \param [in]  u8Pin           IO Pinè„š
  **
- ** \retval    Ok       ÉèÖÃ³É¹¦
+ ** \retval    Ok       è®¾ç½®æˆåŠŸ
  ******************************************************************************/
 en_result_t Gpio_ClearIrq(uint8_t u8Port, uint8_t u8Pin)
 {
@@ -315,12 +315,12 @@ en_result_t Gpio_ClearIrq(uint8_t u8Port, uint8_t u8Pin)
 
 /**
  *******************************************************************************
- ** \brief GPIO ¸½¼Ó¹¦ÄÜÉè¶¨
+ ** \brief GPIO é™„åŠ åŠŸèƒ½è®¾å®š
  **
- ** \param [in]  enFunc          ¹¦ÄÜ
- ** \param [in]  u8val           Éè¶¨Öµ
+ ** \param [in]  enFunc          åŠŸèƒ½
+ ** \param [in]  u8val           è®¾å®šå€¼
  **
- ** \retval    Ok       ÉèÖÃ³É¹¦
+ ** \retval    Ok       è®¾ç½®æˆåŠŸ
  ******************************************************************************/
 en_result_t Gpio_SetCtrlExt(en_gpio_ctrlext_t enFunc, uint8_t u8val)
 {
@@ -383,12 +383,12 @@ en_result_t Gpio_SetCtrlExt(en_gpio_ctrlext_t enFunc, uint8_t u8val)
 
 /**
  *******************************************************************************
- ** \brief GPIO SSNÑ¡ÔñÉèÖÃ
+ ** \brief GPIO SSNé€‰æ‹©è®¾ç½®
  **
- ** \param [in]  enSrc          ÊäÈëÔ´Éè¶¨
+ ** \param [in]  enSrc          è¾“å…¥æºè®¾å®š
  **
- ** \retval    Ok       ÉèÖÃ³É¹¦
- **            ÆäËûÖµ   ÉèÖÃÊ§°Ü
+ ** \retval    Ok       è®¾ç½®æˆåŠŸ
+ **            å…¶ä»–å€¼   è®¾ç½®å¤±è´¥
  ******************************************************************************/
 en_result_t Gpio_SetSsnSel(en_gpio_ctrl1src_t enSrc)
 {
@@ -419,12 +419,12 @@ en_result_t Gpio_SetSsnSel(en_gpio_ctrl1src_t enSrc)
 
 /**
  *******************************************************************************
- ** \brief GPIO EXT CLKÑ¡ÔñÉèÖÃ
+ ** \brief GPIO EXT CLKé€‰æ‹©è®¾ç½®
  **
- ** \param [in]  enSrc          ÊäÈëÔ´Éè¶¨
+ ** \param [in]  enSrc          è¾“å…¥æºè®¾å®š
  **
- ** \retval    Ok       ÉèÖÃ³É¹¦
- **            ÆäËûÖµ   ÉèÖÃÊ§°Ü
+ ** \retval    Ok       è®¾ç½®æˆåŠŸ
+ **            å…¶ä»–å€¼   è®¾ç½®å¤±è´¥
  ******************************************************************************/
 en_result_t Gpio_SetExtClkSel(en_gpio_ctrl1src_t enSrc)
 {
@@ -455,12 +455,12 @@ en_result_t Gpio_SetExtClkSel(en_gpio_ctrl1src_t enSrc)
 
 /**
  *******************************************************************************
- ** \brief GPIO ¶¨Ê±Æ÷xÊäÈëÊ±ÖÓÉè¶¨
+ ** \brief GPIO å®šæ—¶å™¨xè¾“å…¥æ—¶é’Ÿè®¾å®š
  **
- ** \param [in]  enTarget           ÊäÈëIO
- ** \param [in]  enType             ¶¨Ê±Æ÷ÀàĞÍ
- ** \retval    Ok       ÉèÖÃ³É¹¦
- **            ÆäËûÖµ   ÉèÖÃÊ§°Ü
+ ** \param [in]  enTarget           è¾“å…¥IO
+ ** \param [in]  enType             å®šæ—¶å™¨ç±»å‹
+ ** \retval    Ok       è®¾ç½®æˆåŠŸ
+ **            å…¶ä»–å€¼   è®¾ç½®å¤±è´¥
  ******************************************************************************/
 en_result_t Gpio_SetSignalSource(en_gpio_target_t enTarget, en_gpio_timex_in_t enType)
 {

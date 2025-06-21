@@ -6,7 +6,7 @@
 
 
 #define  StackLen_Value  100
-u8 BufRead_JiShi=0;						/////ÊÕ°üÊ±¼ä¼ÆÊıÆ÷	
+u8 BufRead_JiShi=0;						/////æ”¶åŒ…æ—¶é—´è®¡æ•°å™¨	
 
 extern Pro_flag_s MCU_flag;
 int fputc(int ch, FILE *f)
@@ -17,7 +17,7 @@ int fputc(int ch, FILE *f)
 }
 
 
-////½ÓÊÕÖĞ¶Ï
+////æ¥æ”¶ä¸­æ–­
 void RxIntCallback(void)
 {
     u8 temp;
@@ -55,13 +55,13 @@ static void App_UartInit(void)
     Gpio_InitIOExt(3,5,GpioDirOut,TRUE,FALSE,FALSE,FALSE);   
     Gpio_InitIOExt(3,6,GpioDirOut,TRUE,FALSE,FALSE,FALSE); 
     
-    //Í¨µÀ¶Ë¿ÚÅäÖÃ
+    //é€šé“ç«¯å£é…ç½®
     Gpio_SetFunc_UART1TX_P35();
     Gpio_SetFunc_UART1RX_P36();
 
     
-    //ÍâÉèÊ±ÖÓÊ¹ÄÜ
-    Clk_SetPeripheralGate(ClkPeripheralBt,TRUE);//Ä£Ê½0/2¿ÉÒÔ²»Ê¹ÄÜ
+    //å¤–è®¾æ—¶é’Ÿä½¿èƒ½
+    Clk_SetPeripheralGate(ClkPeripheralBt,TRUE);//æ¨¡å¼0/2å¯ä»¥ä¸ä½¿èƒ½
     Clk_SetPeripheralGate(ClkPeripheralUart1,TRUE);
 
 
@@ -73,22 +73,22 @@ static void App_UartInit(void)
     stcConfig.bTouchNvic = TRUE;
   
 
-    stcConfig.enRunMode = UartMode1;//²âÊÔÏî£¬¸ü¸Ä´Ë´¦À´×ª»»4ÖÖÄ£Ê½²âÊÔ
+    stcConfig.enRunMode = UartMode1;//æµ‹è¯•é¡¹ï¼Œæ›´æ”¹æ­¤å¤„æ¥è½¬æ¢4ç§æ¨¡å¼æµ‹è¯•
    
 
-    stcMulti.enMulti_mode = UartNormal;//²âÊÔÏî£¬¸ü¸Ä´Ë´¦À´×ª»»¶àÖ÷»úÄ£Ê½£¬mode2/3²ÅÓĞ¶àÖ÷»úÄ£Ê½
+    stcMulti.enMulti_mode = UartNormal;//æµ‹è¯•é¡¹ï¼Œæ›´æ”¹æ­¤å¤„æ¥è½¬æ¢å¤šä¸»æœºæ¨¡å¼ï¼Œmode2/3æ‰æœ‰å¤šä¸»æœºæ¨¡å¼
 
     stcConfig.pstcMultiMode = &stcMulti;
 
-    stcBaud.bDbaud = 0u;//Ë«±¶²¨ÌØÂÊ¹¦ÄÜ
-    stcBaud.u32Baud = 9600u;//¸üĞÂ²¨ÌØÂÊÎ»ÖÃ
-    stcBaud.u8Mode = UartMode1; //¼ÆËã²¨ÌØÂÊĞèÒªÄ£Ê½²ÎÊı
+    stcBaud.bDbaud = 0u;//åŒå€æ³¢ç‰¹ç‡åŠŸèƒ½
+    stcBaud.u32Baud = 9600u;//æ›´æ–°æ³¢ç‰¹ç‡ä½ç½®
+    stcBaud.u8Mode = UartMode1; //è®¡ç®—æ³¢ç‰¹ç‡éœ€è¦æ¨¡å¼å‚æ•°
     pclk = Clk_GetPClkFreq();
     timer=Uart_SetBaudRate(UARTCH1,pclk,&stcBaud);
 
     stcBtConfig.enMD = BtMode2;
     stcBtConfig.enCT = BtTimer;
-    Bt_Init(TIM1, &stcBtConfig);//µ÷ÓÃbasetimer1ÉèÖÃº¯Êı²úÉú²¨ÌØÂÊ
+    Bt_Init(TIM1, &stcBtConfig);//è°ƒç”¨basetimer1è®¾ç½®å‡½æ•°äº§ç”Ÿæ³¢ç‰¹ç‡
     Bt_ARRSet(TIM1,timer);
     Bt_Cnt16Set(TIM1,timer);
     Bt_Run(TIM1);
@@ -112,7 +112,7 @@ void uart1_init(void)
 void  uart1_send(uchar dat)
 {
    
-   Uart_SendData(UARTCH1, dat); //Æô¶¯UART1·¢ËÍµÚÒ»¸ö×Ö½Ú
+   Uart_SendData(UARTCH1, dat); //å¯åŠ¨UART1å‘é€ç¬¬ä¸€ä¸ªå­—èŠ‚
 }
 
 
@@ -120,7 +120,7 @@ void  uart1_send(uchar dat)
 
 
 
-//////½ÓÊÕÊı¾İ´¦Àí
+//////æ¥æ”¶æ•°æ®å¤„ç†
 void UART1_ReadBoxSUB(void)
 
 {
@@ -128,7 +128,7 @@ void UART1_ReadBoxSUB(void)
 	if(BufRead_JiShi>=5)
 	{
 		if(MCU_flag.Rbuf_num>0)
-		{//ÊÕµ½Êı¾İ´¦Àí
+		{//æ”¶åˆ°æ•°æ®å¤„ç†
 		    //led_shan(3, 50);
 		    //TG_Rev(MCU_flag.Rbuf);
 		    RcuData_rev(MCU_flag.Rbuf);
@@ -140,7 +140,7 @@ void UART1_ReadBoxSUB(void)
 
 
 ////////////////////////////////////////////////////buf-delay//////////////////////////////
-////Êı¾İ·¢ËÍ
+////æ•°æ®å‘é€
 void UART1_SendBox(u8 *buf,u8 len)
 {   
 	u8 i;   
@@ -155,8 +155,8 @@ void UART1_SendBox(u8 *buf,u8 len)
 
 
 
-//////½ÓÊÕÖĞ¶Ï´¦Àí
-/////Êı¾İ³¤¶È£¬¶ÑÕ»³¤¶È
+//////æ¥æ”¶ä¸­æ–­å¤„ç†
+/////æ•°æ®é•¿åº¦ï¼Œå †æ ˆé•¿åº¦
 void UART1_R_Interr(u8 datas,u8 StackLen)
 {
 	if(StackLen==0)
@@ -175,7 +175,7 @@ void UART1_R_Interr(u8 datas,u8 StackLen)
 //u8 mm[2];
 void UART1_try(void)
 {
-     //Uart_SendDataIt(M0P_UART1, 55);//·¢ËÍÊı¾İ
+     //Uart_SendDataIt(M0P_UART1, 55);//å‘é€æ•°æ®
     //Uart_SetTb8(M0P_UART1,UartEven,0);
     //Uart_SendDataIt(M0P_UART1,MCU_flag.Debug8_reg++);
     //Uart_SetTb8(M0P_UART1,UartEven,2);
