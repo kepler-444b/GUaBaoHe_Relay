@@ -1,0 +1,92 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.41.0.0
+Copyright (C) 2024 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: shu sds, kepler, LIC=AK1BF-6QGB4-8YEVV-PD252-H6EJQ-FYQ09
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Professional  Version: 5.41.0.0
+Toolchain Path:  D:\Keil\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 7 (build 960)
+Assembler:       Armasm.exe V5.06 update 7 (build 960)
+Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
+Library Manager: ArmAr.exe V5.06 update 7 (build 960)
+Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
+CPU DLL:         SARMCM3.DLL V5.41.0.0
+Dialog DLL:      DARMCM1.DLL V1.19.6.0
+Target DLL:      Segger\JL2CM3.dll V2.99.45.0
+Dialog DLL:      TARMCM1.DLL V1.14.6.0
+ 
+<h2>Project:</h2>
+D:\code\GUaBaoHe_Relay\MDK\gpio_inout.uvprojx
+Project File Date:  06/21/2025
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Keil\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'gpio_inout_Release'
+Note: source file '..\driver\src\ddl.c' - object file renamed from '.\output\release\ddl.o' to '.\output\release\ddl_1.o'.
+Note: source file '..\driver\src\gpio.c' - object file renamed from '.\output\release\gpio.o' to '.\output\release\gpio_1.o'.
+Note: source file '..\driver\src\interrupts_hc32l110.c' - object file renamed from '.\output\release\interrupts_hc32l110.o' to '.\output\release\interrupts_hc32l110_1.o'.
+Note: source file '..\driver\src\clk.c' - object file renamed from '.\output\release\clk.o' to '.\output\release\clk_1.o'.
+Note: source file '..\driver\src\bt.c' - object file renamed from '.\output\release\bt.o' to '.\output\release\bt_1.o'.
+Note: source file '..\driver\src\uart.c' - object file renamed from '.\output\release\uart.o' to '.\output\release\uart_1.o'.
+Note: source file '..\driver\src\flash.c' - object file renamed from '.\output\release\flash.o' to '.\output\release\flash_1.o'.
+Note: source file '..\driver\src\wdt.c' - object file renamed from '.\output\release\wdt.o' to '.\output\release\wdt_1.o'.
+assembling startup_hc32l110.s...
+compiling system_hc32l110.c...
+compiling main.c...
+compiling sys.c...
+compiling usart.c...
+compiling TG.c...
+compiling led.c...
+compiling ddl.c...
+compiling key.c...
+compiling strs.c...
+compiling timers.c...
+compiling gpio.c...
+compiling interrupts_hc32l110.c...
+compiling bt.c...
+compiling clk.c...
+compiling wdt.c...
+compiling uart.c...
+compiling xunSub.c...
+compiling flash.c...
+compiling RelayApp.c...
+..\APP\RelayApp.c(241): warning:  #111-D: statement is unreachable
+      	MCU_flag.fa_zhi=dat[3]*256+dat[4];
+..\APP\RelayApp.c(254): warning:  #111-D: statement is unreachable
+      	MCU_flag.ZMCU_relay[0]=dat[2];
+..\APP\RelayApp.c: 2 warnings, 0 errors
+linking...
+Program Size: Code=7984 RO-data=232 RW-data=164 ZI-data=2900  
+FromELF: creating hex file...
+".\output\release\GUaBaoHe_Relay101.axf" - 0 Error(s), 2 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS.6.2.0.pack
+                ARM::CMSIS@6.2.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 6.1.1
+
+Package Vendor: HDSC
+                https://raw.githubusercontent.com/hdscmcu/pack/master/HDSC.HC32L110.1.0.3.pack
+                HDSC::HC32L110@1.0.3
+                HC32L110 ARM Cortex-M0+ Device Family Pack
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_gpio_inout_Release
+  D:/Keil/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include
+  D:/Keil/Arm/Packs/HDSC/HC32L110/1.0.3/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@6.1.1
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>

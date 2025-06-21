@@ -1,0 +1,1455 @@
+Component: ARM Compiler 5.06 update 7 (build 960) Tool: armlink [4d3601]
+
+==============================================================================
+
+Section Cross References
+
+    system_hc32l110.o(i.SystemCoreClockUpdate) refers to clk_1.o(i.Clk_GetHClkFreq) for Clk_GetHClkFreq
+    system_hc32l110.o(i.SystemCoreClockUpdate) refers to system_hc32l110.o(.data) for .data
+    system_hc32l110.o(i.SystemInit) refers to clk_1.o(i.Clk_SetRCHFreq) for Clk_SetRCHFreq
+    system_hc32l110.o(i.SystemInit) refers to clk_1.o(i.Clk_Enable) for Clk_Enable
+    system_hc32l110.o(i.SystemInit) refers to system_hc32l110.o(i.SystemCoreClockUpdate) for SystemCoreClockUpdate
+    system_hc32l110.o(i.SystemInit) refers to ddl_1.o(i.ddl_memclr) for ddl_memclr
+    system_hc32l110.o(i.SystemInit) refers to clk_1.o(i.Clk_SysTickConfig) for Clk_SysTickConfig
+    startup_hc32l110.o(STACK) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_hc32l110.o(HEAP) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_hc32l110.o(RESET) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_hc32l110.o(RESET) refers to startup_hc32l110.o(STACK) for __initial_sp
+    startup_hc32l110.o(RESET) refers to startup_hc32l110.o(.text) for Reset_Handler
+    startup_hc32l110.o(RESET) refers to interrupts_hc32l110_1.o(i.HardFault_Handler) for HardFault_Handler
+    startup_hc32l110.o(RESET) refers to interrupts_hc32l110_1.o(i.IRQ000_Handler) for IRQ000_Handler
+    startup_hc32l110.o(RESET) refers to interrupts_hc32l110_1.o(i.IRQ001_Handler) for IRQ001_Handler
+    startup_hc32l110.o(RESET) refers to interrupts_hc32l110_1.o(i.IRQ002_Handler) for IRQ002_Handler
+    startup_hc32l110.o(RESET) refers to interrupts_hc32l110_1.o(i.IRQ003_Handler) for IRQ003_Handler
+    startup_hc32l110.o(RESET) refers to interrupts_hc32l110_1.o(i.IRQ006_Handler) for IRQ006_Handler
+    startup_hc32l110.o(RESET) refers to interrupts_hc32l110_1.o(i.IRQ007_Handler) for IRQ007_Handler
+    startup_hc32l110.o(RESET) refers to interrupts_hc32l110_1.o(i.IRQ008_Handler) for IRQ008_Handler
+    startup_hc32l110.o(RESET) refers to interrupts_hc32l110_1.o(i.IRQ010_Handler) for IRQ010_Handler
+    startup_hc32l110.o(RESET) refers to interrupts_hc32l110_1.o(i.IRQ012_Handler) for IRQ012_Handler
+    startup_hc32l110.o(RESET) refers to interrupts_hc32l110_1.o(i.IRQ014_Handler) for IRQ014_Handler
+    startup_hc32l110.o(RESET) refers to interrupts_hc32l110_1.o(i.IRQ015_Handler) for IRQ015_Handler
+    startup_hc32l110.o(RESET) refers to interrupts_hc32l110_1.o(i.IRQ016_Handler) for IRQ016_Handler
+    startup_hc32l110.o(RESET) refers to interrupts_hc32l110_1.o(i.IRQ017_Handler) for IRQ017_Handler
+    startup_hc32l110.o(RESET) refers to interrupts_hc32l110_1.o(i.IRQ018_Handler) for IRQ018_Handler
+    startup_hc32l110.o(RESET) refers to interrupts_hc32l110_1.o(i.IRQ019_Handler) for IRQ019_Handler
+    startup_hc32l110.o(RESET) refers to interrupts_hc32l110_1.o(i.IRQ020_Handler) for IRQ020_Handler
+    startup_hc32l110.o(RESET) refers to interrupts_hc32l110_1.o(i.IRQ021_Handler) for IRQ021_Handler
+    startup_hc32l110.o(RESET) refers to interrupts_hc32l110_1.o(i.IRQ022_Handler) for IRQ022_Handler
+    startup_hc32l110.o(RESET) refers to interrupts_hc32l110_1.o(i.IRQ023_Handler) for IRQ023_Handler
+    startup_hc32l110.o(RESET) refers to interrupts_hc32l110_1.o(i.IRQ024_Handler) for IRQ024_Handler
+    startup_hc32l110.o(RESET) refers to interrupts_hc32l110_1.o(i.IRQ026_Handler) for IRQ026_Handler
+    startup_hc32l110.o(RESET) refers to interrupts_hc32l110_1.o(i.IRQ027_Handler) for IRQ027_Handler
+    startup_hc32l110.o(RESET) refers to interrupts_hc32l110_1.o(i.IRQ028_Handler) for IRQ028_Handler
+    startup_hc32l110.o(RESET) refers to interrupts_hc32l110_1.o(i.IRQ030_Handler) for IRQ030_Handler
+    startup_hc32l110.o(RESET) refers to interrupts_hc32l110_1.o(i.IRQ031_Handler) for IRQ031_Handler
+    startup_hc32l110.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_hc32l110.o(.text) refers to system_hc32l110.o(i.SystemInit) for SystemInit
+    startup_hc32l110.o(.text) refers to __main.o(!!!main) for __main
+    startup_hc32l110.o(.text) refers to startup_hc32l110.o(HEAP) for Heap_Mem
+    startup_hc32l110.o(.text) refers to startup_hc32l110.o(STACK) for Stack_Mem
+    key.o(i.Get_MyMac) refers to gpio_1.o(i.Gpio_GetIO) for Gpio_GetIO
+    key.o(i.Get_MyMac) refers to sys.o(.bss) for MCU_flag
+    key.o(i.key_init) refers to sys.o(i.io_init) for io_init
+    led.o(i.LED_Init) refers to sys.o(i.io_init) for io_init
+    led.o(i.LED_Init) refers to led.o(i.h595d_init) for h595d_init
+    led.o(i.h595d_init) refers to sys.o(i.io_init) for io_init
+    led.o(i.h595d_write) refers to gpio_1.o(i.Gpio_SetIO) for Gpio_SetIO
+    led.o(i.h595d_write) refers to sys.o(i.delay_us) for delay_us
+    led.o(i.led_set) refers to gpio_1.o(i.Gpio_SetIO) for Gpio_SetIO
+    led.o(i.led_shan) refers to led.o(.data) for .data
+    led.o(i.led_shan_sub) refers to gpio_1.o(i.Gpio_GetIO) for Gpio_GetIO
+    led.o(i.led_shan_sub) refers to gpio_1.o(i.Gpio_SetIO) for Gpio_SetIO
+    led.o(i.led_shan_sub) refers to led.o(.data) for .data
+    led.o(i.led_shan_sub) refers to sys.o(.bss) for MCU_flag
+    led.o(i.relay_closeA) refers to led.o(i.relay_set) for relay_set
+    led.o(i.relay_closeA_SBuf) refers to led.o(i.relay_set) for relay_set
+    led.o(i.relay_read) refers to led.o(.data) for .data
+    led.o(i.relay_read) refers to sys.o(.bss) for MCU_flag
+    led.o(i.relay_set) refers to led.o(.data) for .data
+    led.o(i.relay_set) refers to sys.o(.bss) for MCU_flag
+    sys.o(i.App_ClkInit) refers to clk_1.o(i.Clk_SwitchTo) for Clk_SwitchTo
+    sys.o(i.App_ClkInit) refers to clk_1.o(i.Clk_SetRCHFreq) for Clk_SetRCHFreq
+    sys.o(i.App_ClkInit) refers to clk_1.o(i.Clk_SetRCLFreq) for Clk_SetRCLFreq
+    sys.o(i.App_ClkInit) refers to clk_1.o(i.Clk_GetHClkFreq) for Clk_GetHClkFreq
+    sys.o(i.Data_save) refers to flash_1.o(i.Flash_SectorErase) for Flash_SectorErase
+    sys.o(i.Data_save) refers to flash_1.o(i.Flash_WriteByte) for Flash_WriteByte
+    sys.o(i.FlashInt) refers to flash_1.o(i.Flash_GetIntFlag) for Flash_GetIntFlag
+    sys.o(i.FlashInt) refers to flash_1.o(i.Flash_ClearIntFlag) for Flash_ClearIntFlag
+    sys.o(i.FlashInt) refers to flash_1.o(i.Flash_DisableIrq) for Flash_DisableIrq
+    sys.o(i.Get_UID) refers to sys.o(i.crc_chk_value) for crc_chk_value
+    sys.o(i.flash_init) refers to flash_1.o(i.Flash_Init) for Flash_Init
+    sys.o(i.flash_init) refers to sys.o(i.FlashInt) for FlashInt
+    sys.o(i.io_init) refers to gpio_1.o(i.Gpio_InitIOExt) for Gpio_InitIOExt
+    sys.o(i.wdog_init) refers to ddl_1.o(i.ddl_memclr) for ddl_memclr
+    sys.o(i.wdog_init) refers to clk_1.o(i.Clk_SetPeripheralGate) for Clk_SetPeripheralGate
+    sys.o(i.wdog_init) refers to wdt_1.o(i.Wdt_Init) for Wdt_Init
+    sys.o(i.wdog_init) refers to wdt_1.o(i.Wdt_Start) for Wdt_Start
+    usart.o(i.App_UartInit) refers to ddl_1.o(i.ddl_memclr) for ddl_memclr
+    usart.o(i.App_UartInit) refers to gpio_1.o(i.Gpio_InitIOExt) for Gpio_InitIOExt
+    usart.o(i.App_UartInit) refers to clk_1.o(i.Clk_SetPeripheralGate) for Clk_SetPeripheralGate
+    usart.o(i.App_UartInit) refers to clk_1.o(i.Clk_GetPClkFreq) for Clk_GetPClkFreq
+    usart.o(i.App_UartInit) refers to uart_1.o(i.Uart_SetBaudRate) for Uart_SetBaudRate
+    usart.o(i.App_UartInit) refers to bt_1.o(i.Bt_Init) for Bt_Init
+    usart.o(i.App_UartInit) refers to bt_1.o(i.Bt_ARRSet) for Bt_ARRSet
+    usart.o(i.App_UartInit) refers to bt_1.o(i.Bt_Cnt16Set) for Bt_Cnt16Set
+    usart.o(i.App_UartInit) refers to bt_1.o(i.Bt_Run) for Bt_Run
+    usart.o(i.App_UartInit) refers to uart_1.o(i.Uart_Init) for Uart_Init
+    usart.o(i.App_UartInit) refers to uart_1.o(i.Uart_EnableIrq) for Uart_EnableIrq
+    usart.o(i.App_UartInit) refers to uart_1.o(i.Uart_ClrStatus) for Uart_ClrStatus
+    usart.o(i.App_UartInit) refers to uart_1.o(i.Uart_EnableFunc) for Uart_EnableFunc
+    usart.o(i.App_UartInit) refers to usart.o(i.RxIntCallback) for RxIntCallback
+    usart.o(i.App_UartInit) refers to usart.o(i.ErrIntCallback) for ErrIntCallback
+    usart.o(i.RxIntCallback) refers to usart.o(i.UART1_R_Interr) for UART1_R_Interr
+    usart.o(i.UART1_R_Interr) refers to sys.o(.bss) for MCU_flag
+    usart.o(i.UART1_R_Interr) refers to usart.o(.data) for .data
+    usart.o(i.UART1_ReadBoxSUB) refers to relayapp.o(i.RcuData_rev) for RcuData_rev
+    usart.o(i.UART1_ReadBoxSUB) refers to usart.o(.data) for .data
+    usart.o(i.UART1_ReadBoxSUB) refers to sys.o(.bss) for MCU_flag
+    usart.o(i.UART1_SendBox) refers to gpio_1.o(i.Gpio_SetIO) for Gpio_SetIO
+    usart.o(i.UART1_SendBox) refers to usart.o(i.uart1_send) for uart1_send
+    usart.o(i.UART1_SendBox) refers to sys.o(i.delay_us) for delay_us
+    usart.o(i.fputc) refers to usart.o(i.uart1_send) for uart1_send
+    usart.o(i.uart1_init) refers to sys.o(i.io_init) for io_init
+    usart.o(i.uart1_init) refers to usart.o(i.App_UartInit) for App_UartInit
+    usart.o(i.uart1_init) refers to gpio_1.o(i.Gpio_SetIO) for Gpio_SetIO
+    usart.o(i.uart1_send) refers to uart_1.o(i.Uart_SendData) for Uart_SendData
+    tg.o(i.Gpio_IRQHandler) refers to tg.o(i.TG_ZeroEX) for TG_ZeroEX
+    tg.o(i.Gpio_IRQHandler) refers to tg.o(i.ZeroEX) for ZeroEX
+    tg.o(i.TG_Init) refers to sys.o(i.io_init) for io_init
+    tg.o(i.TG_Init) refers to gpio_1.o(i.Gpio_InitIOExt) for Gpio_InitIOExt
+    tg.o(i.TG_Init) refers to gpio_1.o(i.Gpio_ClearIrq) for Gpio_ClearIrq
+    tg.o(i.TG_Init) refers to gpio_1.o(i.Gpio_EnableIrq) for Gpio_EnableIrq
+    tg.o(i.TG_Init) refers to interrupts_hc32l110_1.o(i.EnableNvic) for EnableNvic
+    tg.o(i.TG_Init) refers to sys.o(.bss) for MCU_flag
+    tg.o(i.TG_Rev) refers to sys.o(.bss) for MCU_flag
+    tg.o(i.TG_Rev) refers to tg.o(.data) for .data
+    tg.o(i.TG_TimOVR) refers to tg.o(i.ZeroDelay) for ZeroDelay
+    tg.o(i.TG_TimOVR) refers to gpio_1.o(i.Gpio_SetIO) for Gpio_SetIO
+    tg.o(i.TG_TimOVR) refers to tg.o(.data) for .data
+    tg.o(i.TG_Work) refers to sys.o(.bss) for MCU_flag
+    tg.o(i.TG_Work) refers to tg.o(.data) for .data
+    tg.o(i.TG_Work) refers to relayapp.o(.data) for Rcu_type
+    tg.o(i.TG_ZeroEX) refers to bt_1.o(i.Bt_Cnt16Set) for Bt_Cnt16Set
+    tg.o(i.TG_ZeroEX) refers to gpio_1.o(i.Gpio_SetIO) for Gpio_SetIO
+    tg.o(i.TG_ZeroEX) refers to sys.o(i.delay_us) for delay_us
+    tg.o(i.TG_ZeroEX) refers to tg.o(.data) for .data
+    tg.o(i.ZeroDelay) refers to relayapp.o(i.Relay_sub) for Relay_sub
+    tg.o(i.ZeroDelay) refers to led.o(i.led_set) for led_set
+    tg.o(i.ZeroDelay) refers to tg.o(.data) for .data
+    tg.o(i.ZeroDelay) refers to sys.o(.bss) for MCU_flag
+    tg.o(i.ZeroEX) refers to tg.o(.data) for .data
+    tg.o(i.ZeroEX) refers to sys.o(.bss) for MCU_flag
+    tg.o(i.jishu_sub) refers to relayapp.o(i.Relay_sub) for Relay_sub
+    tg.o(i.jishu_sub) refers to led.o(i.led_set) for led_set
+    tg.o(i.jishu_sub) refers to sys.o(.bss) for MCU_flag
+    tg.o(i.tg_JL_sub) refers to sys.o(.bss) for MCU_flag
+    tg.o(i.tg_JL_sub) refers to tg.o(.data) for .data
+    main.o(i.Thread_Ms100_sub) refers to sys.o(.bss) for MCU_flag
+    main.o(i.Thread_Ms_sub) refers to xunsub.o(i.xunSub_diao) for xunSub_diao
+    main.o(i.Thread_Ms_sub) refers to wdt_1.o(i.Wdt_Feed) for Wdt_Feed
+    main.o(i.Thread_Ms_sub) refers to sys.o(.bss) for MCU_flag
+    main.o(i.init) refers to sys.o(i.App_ClkInit) for App_ClkInit
+    main.o(i.init) refers to sys.o(i.wdog_init) for wdog_init
+    main.o(i.init) refers to led.o(i.LED_Init) for LED_Init
+    main.o(i.init) refers to usart.o(i.uart1_init) for uart1_init
+    main.o(i.init) refers to key.o(i.key_init) for key_init
+    main.o(i.init) refers to timers.o(i.timer0_Init) for timer0_Init
+    main.o(i.init) refers to key.o(i.Get_MyMac) for Get_MyMac
+    main.o(i.init) refers to tg.o(i.TG_Init) for TG_Init
+    main.o(i.init) refers to led.o(i.led_shan) for led_shan
+    main.o(i.init) refers to sys.o(.bss) for MCU_flag
+    main.o(i.main) refers to main.o(i.init) for init
+    main.o(i.main) refers to main.o(i.Thread_Ms_sub) for Thread_Ms_sub
+    timers.o(i.App_Timer0Cfg) refers to bt_1.o(i.Bt_Init) for Bt_Init
+    timers.o(i.App_Timer0Cfg) refers to bt_1.o(i.Bt_ClearIntFlag) for Bt_ClearIntFlag
+    timers.o(i.App_Timer0Cfg) refers to bt_1.o(i.Bt_EnableIrq) for Bt_EnableIrq
+    timers.o(i.App_Timer0Cfg) refers to interrupts_hc32l110_1.o(i.EnableNvic) for EnableNvic
+    timers.o(i.App_Timer0Cfg) refers to bt_1.o(i.Bt_ARRSet) for Bt_ARRSet
+    timers.o(i.App_Timer0Cfg) refers to bt_1.o(i.Bt_Cnt16Set) for Bt_Cnt16Set
+    timers.o(i.App_Timer0Cfg) refers to bt_1.o(i.Bt_Run) for Bt_Run
+    timers.o(i.App_Timer0Cfg) refers to timers.o(i.Bt0Int) for Bt0Int
+    timers.o(i.App_Timer2Cfg) refers to bt_1.o(i.Bt_Init) for Bt_Init
+    timers.o(i.App_Timer2Cfg) refers to bt_1.o(i.Bt_ClearIntFlag) for Bt_ClearIntFlag
+    timers.o(i.App_Timer2Cfg) refers to bt_1.o(i.Bt_EnableIrq) for Bt_EnableIrq
+    timers.o(i.App_Timer2Cfg) refers to interrupts_hc32l110_1.o(i.EnableNvic) for EnableNvic
+    timers.o(i.App_Timer2Cfg) refers to bt_1.o(i.Bt_ARRSet) for Bt_ARRSet
+    timers.o(i.App_Timer2Cfg) refers to bt_1.o(i.Bt_Cnt16Set) for Bt_Cnt16Set
+    timers.o(i.App_Timer2Cfg) refers to bt_1.o(i.Bt_Run) for Bt_Run
+    timers.o(i.App_Timer2Cfg) refers to timers.o(i.Bt2Int) for Bt2Int
+    timers.o(i.Bt0Int) refers to bt_1.o(i.Bt_GetIntFlag) for Bt_GetIntFlag
+    timers.o(i.Bt0Int) refers to bt_1.o(i.Bt_ClearIntFlag) for Bt_ClearIntFlag
+    timers.o(i.Bt0Int) refers to tg.o(i.TG_TimOVR) for TG_TimOVR
+    timers.o(i.Bt0Int) refers to xunsub.o(i.xunSub_timer) for xunSub_timer
+    timers.o(i.Bt0Int) refers to sys.o(.bss) for MCU_flag
+    timers.o(i.Bt2Int) refers to bt_1.o(i.Bt_GetIntFlag) for Bt_GetIntFlag
+    timers.o(i.Bt2Int) refers to bt_1.o(i.Bt_ClearIntFlag) for Bt_ClearIntFlag
+    timers.o(i.Bt2Int) refers to tg.o(i.TG_TimOVR) for TG_TimOVR
+    timers.o(i.Bt2Int) refers to xunsub.o(i.xunSub_timer) for xunSub_timer
+    timers.o(i.Bt2Int) refers to sys.o(.bss) for MCU_flag
+    timers.o(i.timer0_Init) refers to clk_1.o(i.Clk_Init) for Clk_Init
+    timers.o(i.timer0_Init) refers to clk_1.o(i.Clk_SetPeripheralGate) for Clk_SetPeripheralGate
+    timers.o(i.timer0_Init) refers to timers.o(i.App_Timer0Cfg) for App_Timer0Cfg
+    timers.o(i.timer2_Init) refers to clk_1.o(i.Clk_Init) for Clk_Init
+    timers.o(i.timer2_Init) refers to clk_1.o(i.Clk_SetPeripheralGate) for Clk_SetPeripheralGate
+    timers.o(i.timer2_Init) refers to timers.o(i.App_Timer2Cfg) for App_Timer2Cfg
+    ddl_1.o(.rev16_text) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ddl_1.o(.revsh_text) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ddl_1.o(i.DDL_WAIT_LOOP_HOOK) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ddl_1.o(i.Debug_Output) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ddl_1.o(i.Debug_UartInit) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ddl_1.o(i.Debug_UartInit) refers to clk_1.o(i.Clk_GetPClkFreq) for Clk_GetPClkFreq
+    ddl_1.o(i.Debug_UartInit) refers to aeabi_sdiv.o(.text) for __aeabi_uidivmod
+    ddl_1.o(i.Log2) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ddl_1.o(i.__backspace) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ddl_1.o(i._sys_exit) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ddl_1.o(i._ttywrch) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ddl_1.o(i.ddl_memclr) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ddl_1.o(i.delay100us) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ddl_1.o(i.delay100us) refers to aeabi_sdiv.o(.text) for __aeabi_uidivmod
+    ddl_1.o(i.delay100us) refers to system_hc32l110.o(.data) for SystemCoreClock
+    ddl_1.o(i.delay1ms) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    ddl_1.o(i.delay1ms) refers to aeabi_sdiv.o(.text) for __aeabi_uidivmod
+    ddl_1.o(i.delay1ms) refers to system_hc32l110.o(.data) for SystemCoreClock
+    ddl_1.o(.data) refers (Special) to use_no_semi_2.o(.text) for __use_no_semihosting
+    gpio_1.o(i.Gpio_DisableIrq) refers to gpio_1.o(i._GpioEnableIrq) for _GpioEnableIrq
+    gpio_1.o(i.Gpio_EnableIrq) refers to gpio_1.o(i._GpioEnableIrq) for _GpioEnableIrq
+    gpio_1.o(i.Gpio_InitIO) refers to gpio_1.o(i.Gpio_SetAnalog) for Gpio_SetAnalog
+    gpio_1.o(i.Gpio_InitIOExt) refers to gpio_1.o(i.Gpio_SetAnalog) for Gpio_SetAnalog
+    gpio_1.o(i.Gpio_SetCtrlExt) refers to gpio_1.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    gpio_1.o(i.Gpio_SetCtrlExt) refers to ddl_1.o(i.Log2) for Log2
+    gpio_1.o(i.Gpio_SetExtClkSel) refers to gpio_1.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    gpio_1.o(i.Gpio_SetSignalSource) refers to gpio_1.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    gpio_1.o(i.Gpio_SetSsnSel) refers to gpio_1.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    interrupts_hc32l110_1.o(i.IRQ000_Handler) refers (Weak) to tg.o(i.Gpio_IRQHandler) for Gpio_IRQHandler
+    interrupts_hc32l110_1.o(i.IRQ001_Handler) refers (Weak) to tg.o(i.Gpio_IRQHandler) for Gpio_IRQHandler
+    interrupts_hc32l110_1.o(i.IRQ002_Handler) refers (Weak) to tg.o(i.Gpio_IRQHandler) for Gpio_IRQHandler
+    interrupts_hc32l110_1.o(i.IRQ003_Handler) refers (Weak) to tg.o(i.Gpio_IRQHandler) for Gpio_IRQHandler
+    interrupts_hc32l110_1.o(i.IRQ006_Handler) refers (Weak) to uart_1.o(i.Uart_IRQHandler) for Uart_IRQHandler
+    interrupts_hc32l110_1.o(i.IRQ007_Handler) refers (Weak) to uart_1.o(i.Uart_IRQHandler) for Uart_IRQHandler
+    interrupts_hc32l110_1.o(i.IRQ014_Handler) refers (Weak) to bt_1.o(i.Tim_IRQHandler) for Tim_IRQHandler
+    interrupts_hc32l110_1.o(i.IRQ015_Handler) refers (Weak) to bt_1.o(i.Tim_IRQHandler) for Tim_IRQHandler
+    interrupts_hc32l110_1.o(i.IRQ016_Handler) refers (Weak) to bt_1.o(i.Tim_IRQHandler) for Tim_IRQHandler
+    interrupts_hc32l110_1.o(i.IRQ022_Handler) refers (Weak) to wdt_1.o(i.Wdt_IRQHandler) for Wdt_IRQHandler
+    interrupts_hc32l110_1.o(i.IRQ030_Handler) refers (Weak) to flash_1.o(i.EfRam_IRQHandler) for EfRam_IRQHandler
+    clk_1.o(i.Clk_DeInit) refers to clk_1.o(i.Clk_SetRCHFreq) for Clk_SetRCHFreq
+    clk_1.o(i.Clk_DeInit) refers to clk_1.o(i.Clk_SwitchTo) for Clk_SwitchTo
+    clk_1.o(i.Clk_DeInit) refers to clk_1.o(i.Clk_SetHClkDiv) for Clk_SetHClkDiv
+    clk_1.o(i.Clk_DeInit) refers to clk_1.o(i.Clk_SetPClkDiv) for Clk_SetPClkDiv
+    clk_1.o(i.Clk_Enable) refers to clk_1.o(i.ClkUnlock) for ClkUnlock
+    clk_1.o(i.Clk_Enable) refers to clk_1.o(i.ClkWriteDummy) for ClkWriteDummy
+    clk_1.o(i.Clk_GetHClkFreq) refers to clk_1.o(.constdata) for .constdata
+    clk_1.o(i.Clk_GetPClkFreq) refers to clk_1.o(i.Clk_GetHClkFreq) for Clk_GetHClkFreq
+    clk_1.o(i.Clk_Init) refers to clk_1.o(i.Clk_SwitchTo) for Clk_SwitchTo
+    clk_1.o(i.Clk_Init) refers to clk_1.o(i.Clk_SetHClkDiv) for Clk_SetHClkDiv
+    clk_1.o(i.Clk_Init) refers to clk_1.o(i.Clk_SetPClkDiv) for Clk_SetPClkDiv
+    clk_1.o(i.Clk_SetFunc) refers to clk_1.o(i.ClkUnlock) for ClkUnlock
+    clk_1.o(i.Clk_SetFunc) refers to gpio_1.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    clk_1.o(i.Clk_SetFunc) refers to clk_1.o(i.ClkWriteDummy) for ClkWriteDummy
+    clk_1.o(i.Clk_SetHClkDiv) refers to clk_1.o(i.ClkUnlock) for ClkUnlock
+    clk_1.o(i.Clk_SetHClkDiv) refers to ddl_1.o(i.Log2) for Log2
+    clk_1.o(i.Clk_SetPClkDiv) refers to clk_1.o(i.ClkUnlock) for ClkUnlock
+    clk_1.o(i.Clk_SetPClkDiv) refers to ddl_1.o(i.Log2) for Log2
+    clk_1.o(i.Clk_SetRCHFreq) refers to gpio_1.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    clk_1.o(i.Clk_SetRTCAdjustClkFreq) refers to clk_1.o(i.ClkUnlock) for ClkUnlock
+    clk_1.o(i.Clk_SetRTCAdjustClkFreq) refers to clk_1.o(i.ClkWriteDummy) for ClkWriteDummy
+    clk_1.o(i.Clk_SetSource) refers to clk_1.o(i.ClkUnlock) for ClkUnlock
+    clk_1.o(i.Clk_SetSource) refers to clk_1.o(i.ClkWriteDummy) for ClkWriteDummy
+    clk_1.o(i.Clk_SwitchTo) refers to clk_1.o(i.Clk_SetXTH_StableTime) for Clk_SetXTH_StableTime
+    clk_1.o(i.Clk_SwitchTo) refers to clk_1.o(i.Clk_SetRCL_StableTime) for Clk_SetRCL_StableTime
+    clk_1.o(i.Clk_SwitchTo) refers to clk_1.o(i.Clk_SetXTL_StableTime) for Clk_SetXTL_StableTime
+    clk_1.o(i.Clk_SwitchTo) refers to clk_1.o(i.Clk_Enable) for Clk_Enable
+    clk_1.o(i.Clk_SwitchTo) refers to clk_1.o(i.Clk_GetClkRdy) for Clk_GetClkRdy
+    clk_1.o(i.Clk_SwitchTo) refers to clk_1.o(i.Clk_SetSource) for Clk_SetSource
+    clk_1.o(i.Clk_SwitchTo) refers to system_hc32l110.o(i.SystemCoreClockUpdate) for SystemCoreClockUpdate
+    bt_1.o(i.Bt_Init) refers to bt_1.o(.data) for .data
+    bt_1.o(i.Tim_IRQHandler) refers to bt_1.o(.data) for .data
+    uart_1.o(i.UartGetInternDataPtr) refers to uart_1.o(.data) for .data
+    uart_1.o(i.Uart_CheckEvenOrOdd) refers to uart_1.o(i.UartGetInternDataPtr) for UartGetInternDataPtr
+    uart_1.o(i.Uart_ClrStatus) refers to uart_1.o(i.UartGetInternDataPtr) for UartGetInternDataPtr
+    uart_1.o(i.Uart_DisableIrq) refers to uart_1.o(i.UartGetInternDataPtr) for UartGetInternDataPtr
+    uart_1.o(i.Uart_EnableFunc) refers to uart_1.o(i.UartGetInternDataPtr) for UartGetInternDataPtr
+    uart_1.o(i.Uart_EnableIrq) refers to uart_1.o(i.UartGetInternDataPtr) for UartGetInternDataPtr
+    uart_1.o(i.Uart_GetRb8) refers to uart_1.o(i.UartGetInternDataPtr) for UartGetInternDataPtr
+    uart_1.o(i.Uart_GetStatus) refers to uart_1.o(i.UartGetInternDataPtr) for UartGetInternDataPtr
+    uart_1.o(i.Uart_IRQHandler) refers to uart_1.o(i.UartGetInternDataPtr) for UartGetInternDataPtr
+    uart_1.o(i.Uart_IRQHandler) refers to uart_1.o(i.Uart_ClrStatus) for Uart_ClrStatus
+    uart_1.o(i.Uart_Init) refers to uart_1.o(i.UartGetInternDataPtr) for UartGetInternDataPtr
+    uart_1.o(i.Uart_Init) refers to uart_1.o(i.Uart_SetMode) for Uart_SetMode
+    uart_1.o(i.Uart_Init) refers to uart_1.o(i.Uart_SetMultiMode) for Uart_SetMultiMode
+    uart_1.o(i.Uart_Init) refers to uart_1.o(i.__NVIC_ClearPendingIRQ) for __NVIC_ClearPendingIRQ
+    uart_1.o(i.Uart_Init) refers to uart_1.o(i.__NVIC_SetPriority) for __NVIC_SetPriority
+    uart_1.o(i.Uart_ReceiveData) refers to uart_1.o(i.UartGetInternDataPtr) for UartGetInternDataPtr
+    uart_1.o(i.Uart_SendData) refers to uart_1.o(i.UartGetInternDataPtr) for UartGetInternDataPtr
+    uart_1.o(i.Uart_SendData) refers to uart_1.o(i.Uart_ClrStatus) for Uart_ClrStatus
+    uart_1.o(i.Uart_SendData) refers to uart_1.o(i.Uart_GetStatus) for Uart_GetStatus
+    uart_1.o(i.Uart_SetBaudRate) refers to uart_1.o(i.UartGetInternDataPtr) for UartGetInternDataPtr
+    uart_1.o(i.Uart_SetBaudRate) refers to aeabi_sdiv.o(.text) for __aeabi_uidivmod
+    uart_1.o(i.Uart_SetMMDOrCk) refers to uart_1.o(i.UartGetInternDataPtr) for UartGetInternDataPtr
+    uart_1.o(i.Uart_SetMode) refers to uart_1.o(i.UartGetInternDataPtr) for UartGetInternDataPtr
+    uart_1.o(i.Uart_SetMultiMode) refers to uart_1.o(i.UartGetInternDataPtr) for UartGetInternDataPtr
+    uart_1.o(i.Uart_SetSaddr) refers to uart_1.o(i.UartGetInternDataPtr) for UartGetInternDataPtr
+    uart_1.o(i.Uart_SetSaddrEn) refers to uart_1.o(i.UartGetInternDataPtr) for UartGetInternDataPtr
+    uart_1.o(i.Uart_SetTb8) refers to uart_1.o(i.UartGetInternDataPtr) for UartGetInternDataPtr
+    flash_1.o(i.EfRam_IRQHandler) refers to flash_1.o(.data) for .data
+    flash_1.o(i.Flash_Init) refers to flash_1.o(.data) for .data
+    wdt_1.o(i.Wdt_IRQHandler) refers to wdt_1.o(i.Wdt_Start) for Wdt_Start
+    wdt_1.o(i.Wdt_IRQHandler) refers to wdt_1.o(.data) for .data
+    wdt_1.o(i.Wdt_Init) refers to wdt_1.o(i.Wdt_WriteWdtLoad) for Wdt_WriteWdtLoad
+    wdt_1.o(i.Wdt_Init) refers to interrupts_hc32l110_1.o(i.EnableNvic) for EnableNvic
+    wdt_1.o(i.Wdt_Init) refers to wdt_1.o(.data) for .data
+    xunsub.o(i.xunSub_diao) refers to usart.o(i.UART1_ReadBoxSUB) for UART1_ReadBoxSUB
+    xunsub.o(i.xunSub_diao) refers to usart.o(i.UART1_try) for UART1_try
+    xunsub.o(i.xunSub_diao) refers to led.o(i.led_shan_sub) for led_shan_sub
+    xunsub.o(i.xunSub_diao) refers to tg.o(i.jishu_sub) for jishu_sub
+    xunsub.o(i.xunSub_diao) refers to tg.o(i.TG_Work) for TG_Work
+    xunsub.o(i.xunSub_diao) refers to xunsub.o(.bss) for .bss
+    xunsub.o(i.xunSub_timer) refers to xunsub.o(.data) for .data
+    xunsub.o(i.xunSub_timer) refers to xunsub.o(.bss) for .bss
+    relayapp.o(i.GetRelaybuf10) refers to sys.o(.bss) for MCU_flag
+    relayapp.o(i.GetRelaybuf11) refers to sys.o(.bss) for MCU_flag
+    relayapp.o(i.RcuData_rev) refers to sys.o(i.GetCheckHe) for GetCheckHe
+    relayapp.o(i.RcuData_rev) refers to led.o(i.led_shan) for led_shan
+    relayapp.o(i.RcuData_rev) refers to sys.o(i.crc_chk_value) for crc_chk_value
+    relayapp.o(i.RcuData_rev) refers to sys.o(.bss) for MCU_flag
+    relayapp.o(i.Relay_sub) refers to led.o(i.relay_closeA_SBuf) for relay_closeA_SBuf
+    relayapp.o(i.Relay_sub) refers to led.o(i.h595d_write) for h595d_write
+    relayapp.o(i.Relay_sub) refers to relayapp.o(i.GetRelaybuf11) for GetRelaybuf11
+    relayapp.o(i.Relay_sub) refers to sys.o(.bss) for MCU_flag
+    relayapp.o(i.Relay_sub) refers to relayapp.o(.data) for .data
+    relayapp.o(i.relay_try) refers to relayapp.o(.data) for .data
+    relayapp.o(i.relay_try) refers to sys.o(.bss) for MCU_flag
+    use_no_semi_2.o(.text) refers (Special) to use_no_semi.o(.text) for __use_no_semihosting_swi
+    __main.o(!!!main) refers to __rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for __rt_entry_li
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for __rt_entry_main
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000C) for __rt_entry_postli_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000009) for __rt_entry_postsh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000002) for __rt_entry_presh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for __rt_entry_sh
+    aeabi_idiv0_sigfpe.o(.text) refers to rt_div0.o(.text) for __rt_div0
+    __rtentry2.o(.ARM.Collect$$rtentry$$00000008) refers to boardinit2.o(.text) for _platform_post_stackheap_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) refers to libinit.o(.ARM.Collect$$libinit$$00000000) for __rt_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) refers to boardinit3.o(.text) for _platform_post_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to main.o(i.main) for main
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to exit.o(.text) for exit
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000001) for .ARM.Collect$$rtentry$$00000001
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000008) for .ARM.Collect$$rtentry$$00000008
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for .ARM.Collect$$rtentry$$0000000A
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) for .ARM.Collect$$rtentry$$0000000B
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for .ARM.Collect$$rtentry$$0000000D
+    __rtentry4.o(.ARM.Collect$$rtentry$$00000004) refers to sys_stackheap_outer.o(.text) for __user_setup_stackheap
+    __rtentry4.o(.ARM.exidx) refers to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for .ARM.Collect$$rtentry$$00000004
+    rt_div0.o(.text) refers to defsig_fpe_outer.o(.text) for __rt_SIGFPE
+    sys_stackheap_outer.o(.text) refers to libspace.o(.text) for __user_perproc_libspace
+    sys_stackheap_outer.o(.text) refers to startup_hc32l110.o(.text) for __user_initial_stackheap
+    sys_stackheap_outer.o(__vectab_stack_and_reset_area) refers to tempstk.o(.text) for __temporary_stack_top
+    sys_stackheap_outer.o(__vectab_stack_and_reset_area) refers to __main.o(!!!main) for __main
+    exit.o(.text) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for __rt_exit
+    defsig_fpe_outer.o(.text) refers to defsig_fpe_inner.o(.text) for __rt_SIGFPE_inner
+    defsig_fpe_outer.o(.text) refers to defsig_exit.o(.text) for __sig_exit
+    defsig_fpe_formal.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002E) for __rt_lib_init_alloca_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002C) for __rt_lib_init_argv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001B) for __rt_lib_init_atexit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000021) for __rt_lib_init_clock_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000032) for __rt_lib_init_cpp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000030) for __rt_lib_init_exceptions_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000002) for __rt_lib_init_fp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001F) for __rt_lib_init_fp_trap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000023) for __rt_lib_init_getenv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000A) for __rt_lib_init_heap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000011) for __rt_lib_init_lc_collate_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000013) for __rt_lib_init_lc_ctype_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000015) for __rt_lib_init_lc_monetary_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000017) for __rt_lib_init_lc_numeric_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000019) for __rt_lib_init_lc_time_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000004) for __rt_lib_init_preinit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000E) for __rt_lib_init_rand_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000033) for __rt_lib_init_return
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001D) for __rt_lib_init_signal_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000025) for __rt_lib_init_stdio_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000C) for __rt_lib_init_user_alloc_1
+    libspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for .ARM.Collect$$rtexit$$00000000
+    rt_raise.o(.text) refers to __raise.o(.text) for __raise
+    rt_raise.o(.text) refers to ddl_1.o(i._sys_exit) for _sys_exit
+    defsig_exit.o(.text) refers to ddl_1.o(i._sys_exit) for _sys_exit
+    defsig_fpe_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    libinit2.o(.ARM.Collect$$libinit$$00000010) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000012) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000014) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000016) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000018) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000026) refers to argv_veneer.o(.text) for __ARM_argv_veneer
+    libinit2.o(.ARM.Collect$$libinit$$00000027) refers to argv_veneer.o(.text) for __ARM_argv_veneer
+    rtexit2.o(.ARM.Collect$$rtexit$$00000003) refers to libshutdown.o(.ARM.Collect$$libshutdown$$00000000) for __rt_lib_shutdown
+    rtexit2.o(.ARM.Collect$$rtexit$$00000004) refers to ddl_1.o(i._sys_exit) for _sys_exit
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000001) for .ARM.Collect$$rtexit$$00000001
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for .ARM.Collect$$rtexit$$00000003
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for .ARM.Collect$$rtexit$$00000004
+    __raise.o(.text) refers to defsig.o(CL$$defsig) for __default_signal_handler
+    defsig_general.o(.text) refers to ddl_1.o(i._ttywrch) for _ttywrch
+    defsig.o(CL$$defsig) refers to defsig_fpe_inner.o(.text) for __rt_SIGFPE_inner
+    defsig.o(CL$$defsig) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    _get_argv_nomalloc.o(.text) refers (Special) to hrguard.o(.text) for __heap_region$guard
+    _get_argv_nomalloc.o(.text) refers to defsig_rtmem_outer.o(.text) for __rt_SIGRTMEM
+    _get_argv_nomalloc.o(.text) refers to sys_command.o(.text) for _sys_command_string
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000004) for __rt_lib_shutdown_cpp_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000002) for __rt_lib_shutdown_fini_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000009) for __rt_lib_shutdown_fp_trap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000011) for __rt_lib_shutdown_heap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000012) for __rt_lib_shutdown_return
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C) for __rt_lib_shutdown_signal_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000006) for __rt_lib_shutdown_stdio_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E) for __rt_lib_shutdown_user_alloc_1
+    sys_command.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_command.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig_abrt_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtred_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtmem_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtmem_outer.o(.text) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_rtmem_outer.o(.text) refers to defsig_exit.o(.text) for __sig_exit
+    defsig_rtmem_formal.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    defsig_stak_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_pvfn_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_cppl_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_segv_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_other.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing system_hc32l110.o(.rev16_text), (4 bytes).
+    Removing system_hc32l110.o(.revsh_text), (4 bytes).
+    Removing key.o(.rev16_text), (4 bytes).
+    Removing key.o(.revsh_text), (4 bytes).
+    Removing led.o(.rev16_text), (4 bytes).
+    Removing led.o(.revsh_text), (4 bytes).
+    Removing led.o(i.relay_closeA), (38 bytes).
+    Removing led.o(i.relay_read), (52 bytes).
+    Removing sys.o(.rev16_text), (4 bytes).
+    Removing sys.o(.revsh_text), (4 bytes).
+    Removing sys.o(i.Data_load), (24 bytes).
+    Removing sys.o(i.Data_save), (36 bytes).
+    Removing sys.o(i.FlashInt), (46 bytes).
+    Removing sys.o(i.GetCheckCodeX), (26 bytes).
+    Removing sys.o(i.Get_UID), (44 bytes).
+    Removing sys.o(i.delay_ms), (20 bytes).
+    Removing sys.o(i.flash_init), (16 bytes).
+    Removing usart.o(.rev16_text), (4 bytes).
+    Removing usart.o(.revsh_text), (4 bytes).
+    Removing usart.o(i.UART1_SendBox), (52 bytes).
+    Removing usart.o(i.fputc), (14 bytes).
+    Removing usart.o(i.uart1_send), (12 bytes).
+    Removing strs.o(.rev16_text), (4 bytes).
+    Removing strs.o(.revsh_text), (4 bytes).
+    Removing strs.o(i.StrToHexs), (76 bytes).
+    Removing strs.o(i.Strbufclr), (18 bytes).
+    Removing tg.o(.rev16_text), (4 bytes).
+    Removing tg.o(.revsh_text), (4 bytes).
+    Removing tg.o(i.TG_Rev), (88 bytes).
+    Removing tg.o(i.tg_JL_sub), (204 bytes).
+    Removing main.o(.rev16_text), (4 bytes).
+    Removing main.o(.revsh_text), (4 bytes).
+    Removing main.o(i.Set_default), (2 bytes).
+    Removing main.o(i.Thread_Ms100_sub), (24 bytes).
+    Removing timers.o(.rev16_text), (4 bytes).
+    Removing timers.o(.revsh_text), (4 bytes).
+    Removing timers.o(i.App_Timer2Cfg), (100 bytes).
+    Removing timers.o(i.Bt2Int), (48 bytes).
+    Removing timers.o(i.timer2_Init), (44 bytes).
+    Removing ddl_1.o(.rev16_text), (4 bytes).
+    Removing ddl_1.o(.revsh_text), (4 bytes).
+    Removing ddl_1.o(i.DDL_WAIT_LOOP_HOOK), (2 bytes).
+    Removing ddl_1.o(i.Debug_Output), (30 bytes).
+    Removing ddl_1.o(i.Debug_UartInit), (132 bytes).
+    Removing ddl_1.o(i.__backspace), (4 bytes).
+    Removing ddl_1.o(i._ttywrch), (2 bytes).
+    Removing ddl_1.o(i.delay100us), (56 bytes).
+    Removing ddl_1.o(i.delay1ms), (56 bytes).
+    Removing ddl_1.o(.data), (4 bytes).
+    Removing gpio_1.o(.rev16_text), (4 bytes).
+    Removing gpio_1.o(.revsh_text), (4 bytes).
+    Removing gpio_1.o(i.Gpio_DisableIrq), (12 bytes).
+    Removing gpio_1.o(i.Gpio_GetIrqStat), (20 bytes).
+    Removing gpio_1.o(i.Gpio_InitIO), (100 bytes).
+    Removing gpio_1.o(i.Gpio_SetCtrlExt), (196 bytes).
+    Removing gpio_1.o(i.Gpio_SetExtClkSel), (56 bytes).
+    Removing gpio_1.o(i.Gpio_SetSignalSource), (220 bytes).
+    Removing gpio_1.o(i.Gpio_SetSsnSel), (56 bytes).
+    Removing interrupts_hc32l110_1.o(.rev16_text), (4 bytes).
+    Removing interrupts_hc32l110_1.o(.revsh_text), (4 bytes).
+    Removing clk_1.o(.rev16_text), (4 bytes).
+    Removing clk_1.o(.revsh_text), (4 bytes).
+    Removing clk_1.o(i.Clk_DeInit), (30 bytes).
+    Removing clk_1.o(i.Clk_DebugClk), (44 bytes).
+    Removing clk_1.o(i.Clk_GetPeripheralGate), (16 bytes).
+    Removing clk_1.o(i.Clk_SetFunc), (160 bytes).
+    Removing clk_1.o(i.Clk_SetRTCAdjustClkFreq), (188 bytes).
+    Removing clk_1.o(i.Clk_SetXTLDrive), (28 bytes).
+    Removing clk_1.o(i.Clk_SysTickSkewGet), (16 bytes).
+    Removing clk_1.o(i.Clk_SysTickStcalibGet), (16 bytes).
+    Removing bt_1.o(.rev16_text), (4 bytes).
+    Removing bt_1.o(.revsh_text), (4 bytes).
+    Removing bt_1.o(i.Bt_Cnt16Get), (40 bytes).
+    Removing bt_1.o(i.Bt_Cnt32Get), (40 bytes).
+    Removing bt_1.o(i.Bt_Cnt32Set), (48 bytes).
+    Removing bt_1.o(i.Bt_DisableIrq), (56 bytes).
+    Removing bt_1.o(i.Bt_Stop), (60 bytes).
+    Removing uart_1.o(.rev16_text), (4 bytes).
+    Removing uart_1.o(.revsh_text), (4 bytes).
+    Removing uart_1.o(i.Uart_CheckEvenOrOdd), (82 bytes).
+    Removing uart_1.o(i.Uart_DisableIrq), (48 bytes).
+    Removing uart_1.o(i.Uart_GetRb8), (24 bytes).
+    Removing uart_1.o(i.Uart_GetStatus), (60 bytes).
+    Removing uart_1.o(i.Uart_ReceiveData), (22 bytes).
+    Removing uart_1.o(i.Uart_SendData), (54 bytes).
+    Removing uart_1.o(i.Uart_SetMMDOrCk), (36 bytes).
+    Removing uart_1.o(i.Uart_SetSaddr), (24 bytes).
+    Removing uart_1.o(i.Uart_SetSaddrEn), (24 bytes).
+    Removing uart_1.o(i.Uart_SetTb8), (78 bytes).
+    Removing flash_1.o(.rev16_text), (4 bytes).
+    Removing flash_1.o(.revsh_text), (4 bytes).
+    Removing flash_1.o(i.Flash_ChipErase), (128 bytes).
+    Removing flash_1.o(i.Flash_ClearIntFlag), (92 bytes).
+    Removing flash_1.o(i.Flash_DisableIrq), (104 bytes).
+    Removing flash_1.o(i.Flash_EnableIrq), (108 bytes).
+    Removing flash_1.o(i.Flash_GetIntFlag), (32 bytes).
+    Removing flash_1.o(i.Flash_Init), (408 bytes).
+    Removing flash_1.o(i.Flash_SectorErase), (148 bytes).
+    Removing flash_1.o(i.Flash_WriteByte), (144 bytes).
+    Removing flash_1.o(i.Flash_WriteHalfWord), (148 bytes).
+    Removing flash_1.o(i.Flash_WriteWord), (148 bytes).
+    Removing wdt_1.o(.rev16_text), (4 bytes).
+    Removing wdt_1.o(.revsh_text), (4 bytes).
+    Removing wdt_1.o(i.Wdt_ReadWdtValue), (16 bytes).
+    Removing wdt_1.o(i.Wdt_ReadwdtStatus), (16 bytes).
+    Removing xunsub.o(.rev16_text), (4 bytes).
+    Removing xunsub.o(.revsh_text), (4 bytes).
+    Removing xunsub.o(i.xunSub_nc), (2 bytes).
+    Removing relayapp.o(.rev16_text), (4 bytes).
+    Removing relayapp.o(.revsh_text), (4 bytes).
+    Removing relayapp.o(i.GetRelaybuf10), (60 bytes).
+    Removing relayapp.o(i.relay_try), (56 bytes).
+
+112 unused section(s) (total 4886 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    RESET                                    0x00000000   Section      192  startup_hc32l110.o(RESET)
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit2.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit3.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
+    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_zi.o ABSOLUTE
+    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_copy.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry4.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_div0.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_idiv0_sigfpe.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_idiv0.o ABSOLUTE
+    ../clib/angel/scatterp.s                 0x00000000   Number         0  __scatter.o ABSOLUTE
+    ../clib/angel/startup.s                  0x00000000   Number         0  __main.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  tempstk.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi_2.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  no_argv.o ABSOLUTE
+    ../clib/division.s                       0x00000000   Number         0  aeabi_sdiv_div0.o ABSOLUTE
+    ../clib/division.s                       0x00000000   Number         0  aeabi_sdiv.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  hrguard.o ABSOLUTE
+    ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
+    ../clib/signal.s                         0x00000000   Number         0  defsig.o ABSOLUTE
+    ../clib/stdlib.c                         0x00000000   Number         0  exit.o ABSOLUTE
+    ../fplib/cfplib/fpinit.c                 0x00000000   Number         0  fpinit.o ABSOLUTE
+    ..\APP\RelayApp.c                        0x00000000   Number         0  relayapp.o ABSOLUTE
+    ..\APP\xunSub.c                          0x00000000   Number         0  xunsub.o ABSOLUTE
+    ..\\APP\\RelayApp.c                      0x00000000   Number         0  relayapp.o ABSOLUTE
+    ..\\APP\\xunSub.c                        0x00000000   Number         0  xunsub.o ABSOLUTE
+    ..\\common\\system_hc32l110.c            0x00000000   Number         0  system_hc32l110.o ABSOLUTE
+    ..\\driver\\src\\bt.c                    0x00000000   Number         0  bt_1.o ABSOLUTE
+    ..\\driver\\src\\clk.c                   0x00000000   Number         0  clk_1.o ABSOLUTE
+    ..\\driver\\src\\ddl.c                   0x00000000   Number         0  ddl_1.o ABSOLUTE
+    ..\\driver\\src\\flash.c                 0x00000000   Number         0  flash_1.o ABSOLUTE
+    ..\\driver\\src\\gpio.c                  0x00000000   Number         0  gpio_1.o ABSOLUTE
+    ..\\driver\\src\\interrupts_hc32l110.c   0x00000000   Number         0  interrupts_hc32l110_1.o ABSOLUTE
+    ..\\driver\\src\\uart.c                  0x00000000   Number         0  uart_1.o ABSOLUTE
+    ..\\driver\\src\\wdt.c                   0x00000000   Number         0  wdt_1.o ABSOLUTE
+    ..\\source\\TG.c                         0x00000000   Number         0  tg.o ABSOLUTE
+    ..\\source\\key.c                        0x00000000   Number         0  key.o ABSOLUTE
+    ..\\source\\led.c                        0x00000000   Number         0  led.o ABSOLUTE
+    ..\\source\\main.c                       0x00000000   Number         0  main.o ABSOLUTE
+    ..\\source\\strs.c                       0x00000000   Number         0  strs.o ABSOLUTE
+    ..\\source\\sys.c                        0x00000000   Number         0  sys.o ABSOLUTE
+    ..\\source\\timers.c                     0x00000000   Number         0  timers.o ABSOLUTE
+    ..\\source\\usart.c                      0x00000000   Number         0  usart.o ABSOLUTE
+    ..\common\startup_hc32l110.s             0x00000000   Number         0  startup_hc32l110.o ABSOLUTE
+    ..\common\system_hc32l110.c              0x00000000   Number         0  system_hc32l110.o ABSOLUTE
+    ..\driver\src\bt.c                       0x00000000   Number         0  bt_1.o ABSOLUTE
+    ..\driver\src\clk.c                      0x00000000   Number         0  clk_1.o ABSOLUTE
+    ..\driver\src\ddl.c                      0x00000000   Number         0  ddl_1.o ABSOLUTE
+    ..\driver\src\flash.c                    0x00000000   Number         0  flash_1.o ABSOLUTE
+    ..\driver\src\gpio.c                     0x00000000   Number         0  gpio_1.o ABSOLUTE
+    ..\driver\src\interrupts_hc32l110.c      0x00000000   Number         0  interrupts_hc32l110_1.o ABSOLUTE
+    ..\driver\src\uart.c                     0x00000000   Number         0  uart_1.o ABSOLUTE
+    ..\driver\src\wdt.c                      0x00000000   Number         0  wdt_1.o ABSOLUTE
+    ..\source\TG.c                           0x00000000   Number         0  tg.o ABSOLUTE
+    ..\source\key.c                          0x00000000   Number         0  key.o ABSOLUTE
+    ..\source\led.c                          0x00000000   Number         0  led.o ABSOLUTE
+    ..\source\main.c                         0x00000000   Number         0  main.o ABSOLUTE
+    ..\source\strs.c                         0x00000000   Number         0  strs.o ABSOLUTE
+    ..\source\sys.c                          0x00000000   Number         0  sys.o ABSOLUTE
+    ..\source\timers.c                       0x00000000   Number         0  timers.o ABSOLUTE
+    ..\source\usart.c                        0x00000000   Number         0  usart.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    !!!main                                  0x000000c0   Section        8  __main.o(!!!main)
+    !!!scatter                               0x000000c8   Section       60  __scatter.o(!!!scatter)
+    !!handler_copy                           0x00000104   Section       26  __scatter_copy.o(!!handler_copy)
+    !!handler_zi                             0x00000120   Section       28  __scatter_zi.o(!!handler_zi)
+    .ARM.Collect$$libinit$$00000000          0x0000013c   Section        2  libinit.o(.ARM.Collect$$libinit$$00000000)
+    .ARM.Collect$$libinit$$00000002          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000002)
+    .ARM.Collect$$libinit$$00000004          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000004)
+    .ARM.Collect$$libinit$$0000000A          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000A)
+    .ARM.Collect$$libinit$$0000000C          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000C)
+    .ARM.Collect$$libinit$$0000000E          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000E)
+    .ARM.Collect$$libinit$$00000011          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000011)
+    .ARM.Collect$$libinit$$00000013          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000013)
+    .ARM.Collect$$libinit$$00000015          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000015)
+    .ARM.Collect$$libinit$$00000017          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000017)
+    .ARM.Collect$$libinit$$00000019          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000019)
+    .ARM.Collect$$libinit$$0000001B          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001B)
+    .ARM.Collect$$libinit$$0000001D          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001D)
+    .ARM.Collect$$libinit$$0000001F          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001F)
+    .ARM.Collect$$libinit$$00000021          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000021)
+    .ARM.Collect$$libinit$$00000023          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000023)
+    .ARM.Collect$$libinit$$00000025          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000025)
+    .ARM.Collect$$libinit$$0000002C          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000002C)
+    .ARM.Collect$$libinit$$0000002E          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000002E)
+    .ARM.Collect$$libinit$$00000030          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000030)
+    .ARM.Collect$$libinit$$00000032          0x0000013e   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000032)
+    .ARM.Collect$$libinit$$00000033          0x0000013e   Section        2  libinit2.o(.ARM.Collect$$libinit$$00000033)
+    .ARM.Collect$$libshutdown$$00000000      0x00000140   Section        2  libshutdown.o(.ARM.Collect$$libshutdown$$00000000)
+    .ARM.Collect$$libshutdown$$00000002      0x00000142   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000002)
+    .ARM.Collect$$libshutdown$$00000004      0x00000142   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000004)
+    .ARM.Collect$$libshutdown$$00000006      0x00000142   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000006)
+    .ARM.Collect$$libshutdown$$00000009      0x00000142   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000009)
+    .ARM.Collect$$libshutdown$$0000000C      0x00000142   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C)
+    .ARM.Collect$$libshutdown$$0000000E      0x00000142   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E)
+    .ARM.Collect$$libshutdown$$00000011      0x00000142   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000011)
+    .ARM.Collect$$libshutdown$$00000012      0x00000142   Section        2  libshutdown2.o(.ARM.Collect$$libshutdown$$00000012)
+    .ARM.Collect$$rtentry$$00000000          0x00000144   Section        0  __rtentry.o(.ARM.Collect$$rtentry$$00000000)
+    .ARM.Collect$$rtentry$$00000002          0x00000144   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$00000002)
+    .ARM.Collect$$rtentry$$00000004          0x00000144   Section        6  __rtentry4.o(.ARM.Collect$$rtentry$$00000004)
+    .ARM.Collect$$rtentry$$00000009          0x0000014a   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$00000009)
+    .ARM.Collect$$rtentry$$0000000A          0x0000014a   Section        4  __rtentry2.o(.ARM.Collect$$rtentry$$0000000A)
+    .ARM.Collect$$rtentry$$0000000C          0x0000014e   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000C)
+    .ARM.Collect$$rtentry$$0000000D          0x0000014e   Section        8  __rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
+    .ARM.Collect$$rtexit$$00000000           0x00000156   Section        2  rtexit.o(.ARM.Collect$$rtexit$$00000000)
+    .ARM.Collect$$rtexit$$00000002           0x00000158   Section        0  rtexit2.o(.ARM.Collect$$rtexit$$00000002)
+    .ARM.Collect$$rtexit$$00000003           0x00000158   Section        4  rtexit2.o(.ARM.Collect$$rtexit$$00000003)
+    .ARM.Collect$$rtexit$$00000004           0x0000015c   Section        6  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
+    .text                                    0x00000164   Section       88  startup_hc32l110.o(.text)
+    .text                                    0x000001bc   Section        2  use_no_semi_2.o(.text)
+    .text                                    0x000001be   Section      346  aeabi_sdiv.o(.text)
+    .text                                    0x00000318   Section        0  heapauxi.o(.text)
+    .text                                    0x0000031e   Section        2  use_no_semi.o(.text)
+    .text                                    0x00000320   Section       62  sys_stackheap_outer.o(.text)
+    .text                                    0x0000035e   Section        0  exit.o(.text)
+    .text                                    0x00000370   Section        8  libspace.o(.text)
+    i.App_ClkInit                            0x00000378   Section        0  sys.o(i.App_ClkInit)
+    i.App_Timer0Cfg                          0x00000408   Section        0  timers.o(i.App_Timer0Cfg)
+    i.App_UartInit                           0x0000046c   Section        0  usart.o(i.App_UartInit)
+    App_UartInit                             0x0000046d   Thumb Code   278  usart.o(i.App_UartInit)
+    i.Bt0Int                                 0x00000594   Section        0  timers.o(i.Bt0Int)
+    i.Bt_ARRSet                              0x000005c4   Section        0  bt_1.o(i.Bt_ARRSet)
+    i.Bt_ClearIntFlag                        0x00000608   Section        0  bt_1.o(i.Bt_ClearIntFlag)
+    i.Bt_Cnt16Set                            0x00000644   Section        0  bt_1.o(i.Bt_Cnt16Set)
+    i.Bt_EnableIrq                           0x00000688   Section        0  bt_1.o(i.Bt_EnableIrq)
+    i.Bt_GetIntFlag                          0x000006c0   Section        0  bt_1.o(i.Bt_GetIntFlag)
+    i.Bt_Init                                0x000006ec   Section        0  bt_1.o(i.Bt_Init)
+    i.Bt_Run                                 0x00000838   Section        0  bt_1.o(i.Bt_Run)
+    i.ClkUnlock                              0x00000870   Section        0  clk_1.o(i.ClkUnlock)
+    ClkUnlock                                0x00000871   Thumb Code    12  clk_1.o(i.ClkUnlock)
+    i.ClkWriteDummy                          0x00000888   Section        0  clk_1.o(i.ClkWriteDummy)
+    ClkWriteDummy                            0x00000889   Thumb Code    14  clk_1.o(i.ClkWriteDummy)
+    i.Clk_Enable                             0x0000089c   Section        0  clk_1.o(i.Clk_Enable)
+    i.Clk_GetClkRdy                          0x00000958   Section        0  clk_1.o(i.Clk_GetClkRdy)
+    i.Clk_GetHClkFreq                        0x0000098c   Section        0  clk_1.o(i.Clk_GetHClkFreq)
+    i.Clk_GetPClkFreq                        0x00000a1c   Section        0  clk_1.o(i.Clk_GetPClkFreq)
+    i.Clk_Init                               0x00000a34   Section        0  clk_1.o(i.Clk_Init)
+    i.Clk_SetHClkDiv                         0x00000a50   Section        0  clk_1.o(i.Clk_SetHClkDiv)
+    i.Clk_SetPClkDiv                         0x00000aa0   Section        0  clk_1.o(i.Clk_SetPClkDiv)
+    i.Clk_SetPeripheralGate                  0x00000adc   Section        0  clk_1.o(i.Clk_SetPeripheralGate)
+    i.Clk_SetRCHFreq                         0x00000b08   Section        0  clk_1.o(i.Clk_SetRCHFreq)
+    i.Clk_SetRCLFreq                         0x00000b50   Section        0  clk_1.o(i.Clk_SetRCLFreq)
+    i.Clk_SetRCL_StableTime                  0x00000b84   Section        0  clk_1.o(i.Clk_SetRCL_StableTime)
+    i.Clk_SetSource                          0x00000bcc   Section        0  clk_1.o(i.Clk_SetSource)
+    i.Clk_SetXTH_StableTime                  0x00000c08   Section        0  clk_1.o(i.Clk_SetXTH_StableTime)
+    i.Clk_SetXTL_StableTime                  0x00000c48   Section        0  clk_1.o(i.Clk_SetXTL_StableTime)
+    i.Clk_SwitchTo                           0x00000c88   Section        0  clk_1.o(i.Clk_SwitchTo)
+    i.Clk_SysTickConfig                      0x00000d1c   Section        0  clk_1.o(i.Clk_SysTickConfig)
+    i.EfRam_IRQHandler                       0x00000da8   Section        0  flash_1.o(i.EfRam_IRQHandler)
+    i.EnableNvic                             0x00000db4   Section        0  interrupts_hc32l110_1.o(i.EnableNvic)
+    i.ErrIntCallback                         0x00000e34   Section        0  usart.o(i.ErrIntCallback)
+    i.GetCheckHe                             0x00000e36   Section        0  sys.o(i.GetCheckHe)
+    i.GetRelaybuf11                          0x00000e50   Section        0  relayapp.o(i.GetRelaybuf11)
+    i.Get_MyMac                              0x00000e8c   Section        0  key.o(i.Get_MyMac)
+    i.Gpio_ClearIrq                          0x00000ec0   Section        0  gpio_1.o(i.Gpio_ClearIrq)
+    i.Gpio_EnableIrq                         0x00000ed8   Section        0  gpio_1.o(i.Gpio_EnableIrq)
+    i.Gpio_GetIO                             0x00000ee4   Section        0  gpio_1.o(i.Gpio_GetIO)
+    i.Gpio_IRQHandler                        0x00000ef8   Section        0  tg.o(i.Gpio_IRQHandler)
+    i.Gpio_InitIOExt                         0x00000f14   Section        0  gpio_1.o(i.Gpio_InitIOExt)
+    i.Gpio_SetAnalog                         0x00000fa4   Section        0  gpio_1.o(i.Gpio_SetAnalog)
+    i.Gpio_SetIO                             0x00000fc8   Section        0  gpio_1.o(i.Gpio_SetIO)
+    i.HardFault_Handler                      0x00000ff4   Section        0  interrupts_hc32l110_1.o(i.HardFault_Handler)
+    i.IRQ000_Handler                         0x00001000   Section        0  interrupts_hc32l110_1.o(i.IRQ000_Handler)
+    i.IRQ001_Handler                         0x0000100a   Section        0  interrupts_hc32l110_1.o(i.IRQ001_Handler)
+    i.IRQ002_Handler                         0x00001014   Section        0  interrupts_hc32l110_1.o(i.IRQ002_Handler)
+    i.IRQ003_Handler                         0x0000101e   Section        0  interrupts_hc32l110_1.o(i.IRQ003_Handler)
+    i.IRQ006_Handler                         0x00001028   Section        0  interrupts_hc32l110_1.o(i.IRQ006_Handler)
+    i.IRQ007_Handler                         0x00001032   Section        0  interrupts_hc32l110_1.o(i.IRQ007_Handler)
+    i.IRQ008_Handler                         0x0000103c   Section        0  interrupts_hc32l110_1.o(i.IRQ008_Handler)
+    i.IRQ010_Handler                         0x00001046   Section        0  interrupts_hc32l110_1.o(i.IRQ010_Handler)
+    i.IRQ012_Handler                         0x00001050   Section        0  interrupts_hc32l110_1.o(i.IRQ012_Handler)
+    i.IRQ014_Handler                         0x0000105a   Section        0  interrupts_hc32l110_1.o(i.IRQ014_Handler)
+    i.IRQ015_Handler                         0x00001064   Section        0  interrupts_hc32l110_1.o(i.IRQ015_Handler)
+    i.IRQ016_Handler                         0x0000106e   Section        0  interrupts_hc32l110_1.o(i.IRQ016_Handler)
+    i.IRQ017_Handler                         0x00001078   Section        0  interrupts_hc32l110_1.o(i.IRQ017_Handler)
+    i.IRQ018_Handler                         0x00001082   Section        0  interrupts_hc32l110_1.o(i.IRQ018_Handler)
+    i.IRQ019_Handler                         0x0000108c   Section        0  interrupts_hc32l110_1.o(i.IRQ019_Handler)
+    i.IRQ020_Handler                         0x00001096   Section        0  interrupts_hc32l110_1.o(i.IRQ020_Handler)
+    i.IRQ021_Handler                         0x000010a0   Section        0  interrupts_hc32l110_1.o(i.IRQ021_Handler)
+    i.IRQ022_Handler                         0x000010aa   Section        0  interrupts_hc32l110_1.o(i.IRQ022_Handler)
+    i.IRQ023_Handler                         0x000010b4   Section        0  interrupts_hc32l110_1.o(i.IRQ023_Handler)
+    i.IRQ024_Handler                         0x000010be   Section        0  interrupts_hc32l110_1.o(i.IRQ024_Handler)
+    i.IRQ026_Handler                         0x000010c8   Section        0  interrupts_hc32l110_1.o(i.IRQ026_Handler)
+    i.IRQ027_Handler                         0x000010d2   Section        0  interrupts_hc32l110_1.o(i.IRQ027_Handler)
+    i.IRQ028_Handler                         0x000010dc   Section        0  interrupts_hc32l110_1.o(i.IRQ028_Handler)
+    i.IRQ030_Handler                         0x000010e6   Section        0  interrupts_hc32l110_1.o(i.IRQ030_Handler)
+    i.IRQ031_Handler                         0x000010f0   Section        0  interrupts_hc32l110_1.o(i.IRQ031_Handler)
+    i.LED_Init                               0x000010fa   Section        0  led.o(i.LED_Init)
+    i.Log2                                   0x0000110c   Section        0  ddl_1.o(i.Log2)
+    i.RcuData_rev                            0x00001120   Section        0  relayapp.o(i.RcuData_rev)
+    i.Relay_sub                              0x000012ac   Section        0  relayapp.o(i.Relay_sub)
+    i.RxIntCallback                          0x00001444   Section        0  usart.o(i.RxIntCallback)
+    i.SystemCoreClockUpdate                  0x00001458   Section        0  system_hc32l110.o(i.SystemCoreClockUpdate)
+    i.SystemInit                             0x00001468   Section        0  system_hc32l110.o(i.SystemInit)
+    i.TG_Init                                0x0000149c   Section        0  tg.o(i.TG_Init)
+    i.TG_TimOVR                              0x000014fc   Section        0  tg.o(i.TG_TimOVR)
+    i.TG_Work                                0x00001570   Section        0  tg.o(i.TG_Work)
+    i.TG_ZeroEX                              0x00001698   Section        0  tg.o(i.TG_ZeroEX)
+    i.Thread_Ms_sub                          0x000016d0   Section        0  main.o(i.Thread_Ms_sub)
+    i.Tim_IRQHandler                         0x000016ec   Section        0  bt_1.o(i.Tim_IRQHandler)
+    i.UART1_R_Interr                         0x0000170c   Section        0  usart.o(i.UART1_R_Interr)
+    i.UART1_ReadBoxSUB                       0x0000173c   Section        0  usart.o(i.UART1_ReadBoxSUB)
+    i.UART1_try                              0x0000176c   Section        0  usart.o(i.UART1_try)
+    i.UartGetInternDataPtr                   0x00001770   Section        0  uart_1.o(i.UartGetInternDataPtr)
+    UartGetInternDataPtr                     0x00001771   Thumb Code    38  uart_1.o(i.UartGetInternDataPtr)
+    i.Uart_ClrStatus                         0x0000179c   Section        0  uart_1.o(i.Uart_ClrStatus)
+    i.Uart_EnableFunc                        0x000017d8   Section        0  uart_1.o(i.Uart_EnableFunc)
+    i.Uart_EnableIrq                         0x000017fc   Section        0  uart_1.o(i.Uart_EnableIrq)
+    i.Uart_IRQHandler                        0x0000182a   Section        0  uart_1.o(i.Uart_IRQHandler)
+    i.Uart_Init                              0x0000187c   Section        0  uart_1.o(i.Uart_Init)
+    i.Uart_SetBaudRate                       0x0000190c   Section        0  uart_1.o(i.Uart_SetBaudRate)
+    i.Uart_SetMode                           0x00001966   Section        0  uart_1.o(i.Uart_SetMode)
+    i.Uart_SetMultiMode                      0x0000198a   Section        0  uart_1.o(i.Uart_SetMultiMode)
+    i.Wdt_Feed                               0x000019c8   Section        0  wdt_1.o(i.Wdt_Feed)
+    i.Wdt_IRQHandler                         0x000019d8   Section        0  wdt_1.o(i.Wdt_IRQHandler)
+    i.Wdt_Init                               0x000019fc   Section        0  wdt_1.o(i.Wdt_Init)
+    i.Wdt_Start                              0x00001a40   Section        0  wdt_1.o(i.Wdt_Start)
+    i.Wdt_WriteWdtLoad                       0x00001a54   Section        0  wdt_1.o(i.Wdt_WriteWdtLoad)
+    i.ZeroDelay                              0x00001a6c   Section        0  tg.o(i.ZeroDelay)
+    i.ZeroEX                                 0x00001aa8   Section        0  tg.o(i.ZeroEX)
+    i._GpioEnableIrq                         0x00001ac8   Section        0  gpio_1.o(i._GpioEnableIrq)
+    i.__ARM_common_switch8                   0x00001b28   Section        0  gpio_1.o(i.__ARM_common_switch8)
+    i.__NVIC_ClearPendingIRQ                 0x00001b44   Section        0  uart_1.o(i.__NVIC_ClearPendingIRQ)
+    __NVIC_ClearPendingIRQ                   0x00001b45   Thumb Code    18  uart_1.o(i.__NVIC_ClearPendingIRQ)
+    i.__NVIC_SetPriority                     0x00001b5c   Section        0  uart_1.o(i.__NVIC_SetPriority)
+    __NVIC_SetPriority                       0x00001b5d   Thumb Code    60  uart_1.o(i.__NVIC_SetPriority)
+    i._sys_exit                              0x00001ba0   Section        0  ddl_1.o(i._sys_exit)
+    i.crc_chk_value                          0x00001ba4   Section        0  sys.o(i.crc_chk_value)
+    i.ddl_memclr                             0x00001bdc   Section        0  ddl_1.o(i.ddl_memclr)
+    i.delay_us                               0x00001bee   Section        0  sys.o(i.delay_us)
+    i.h595d_init                             0x00001c2e   Section        0  led.o(i.h595d_init)
+    i.h595d_write                            0x00001c50   Section        0  led.o(i.h595d_write)
+    i.init                                   0x00001ce0   Section        0  main.o(i.init)
+    i.io_init                                0x00001d20   Section        0  sys.o(i.io_init)
+    i.jishu_sub                              0x00001d60   Section        0  tg.o(i.jishu_sub)
+    i.key_init                               0x00001d90   Section        0  key.o(i.key_init)
+    i.led_set                                0x00001da8   Section        0  led.o(i.led_set)
+    i.led_shan                               0x00001dc8   Section        0  led.o(i.led_shan)
+    i.led_shan_sub                           0x00001ddc   Section        0  led.o(i.led_shan_sub)
+    i.main                                   0x00001e30   Section        0  main.o(i.main)
+    i.relay_closeA_SBuf                      0x00001e3a   Section        0  led.o(i.relay_closeA_SBuf)
+    i.relay_set                              0x00001e70   Section        0  led.o(i.relay_set)
+    i.timer0_Init                            0x00001ea8   Section        0  timers.o(i.timer0_Init)
+    i.uart1_init                             0x00001ed4   Section        0  usart.o(i.uart1_init)
+    i.wdog_init                              0x00001ef0   Section        0  sys.o(i.wdog_init)
+    i.xunSub_diao                            0x00001f18   Section        0  xunsub.o(i.xunSub_diao)
+    i.xunSub_timer                           0x00001f98   Section        0  xunsub.o(i.xunSub_timer)
+    .constdata                               0x00001ff0   Section        8  clk_1.o(.constdata)
+    .data                                    0x20000000   Section        4  system_hc32l110.o(.data)
+    .data                                    0x20000004   Section       60  led.o(.data)
+    .data                                    0x20000040   Section        1  usart.o(.data)
+    .data                                    0x20000044   Section       26  tg.o(.data)
+    .data                                    0x20000060   Section       12  bt_1.o(.data)
+    pfnTim0Callback                          0x20000060   Data           4  bt_1.o(.data)
+    pfnTim1Callback                          0x20000064   Data           4  bt_1.o(.data)
+    pfnTim2Callback                          0x20000068   Data           4  bt_1.o(.data)
+    .data                                    0x2000006c   Section       40  uart_1.o(.data)
+    m_astcUartInstanceDataLut                0x2000006c   Data          40  uart_1.o(.data)
+    .data                                    0x20000094   Section        4  flash_1.o(.data)
+    pfnFlashCallback                         0x20000094   Data           4  flash_1.o(.data)
+    .data                                    0x20000098   Section        4  wdt_1.o(.data)
+    pfnWdtCallback                           0x20000098   Data           4  wdt_1.o(.data)
+    .data                                    0x2000009c   Section        4  xunsub.o(.data)
+    .data                                    0x200000a0   Section        2  relayapp.o(.data)
+    .bss                                     0x200000a4   Section      204  sys.o(.bss)
+    .bss                                     0x20000170   Section       40  xunsub.o(.bss)
+    .bss                                     0x20000198   Section       96  libspace.o(.bss)
+    HEAP                                     0x200001f8   Section      512  startup_hc32l110.o(HEAP)
+    Heap_Mem                                 0x200001f8   Data         512  startup_hc32l110.o(HEAP)
+    STACK                                    0x200003f8   Section     2048  startup_hc32l110.o(STACK)
+    Stack_Mem                                0x200003f8   Data        2048  startup_hc32l110.o(STACK)
+    __initial_sp                             0x20000bf8   Data           0  startup_hc32l110.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv3M$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$ROPI$EBA8$UX$STANDARDLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    __Vectors                                0x00000000   Data           4  startup_hc32l110.o(RESET)
+    Adc_IRQHandler                            - Undefined Weak Reference
+    Adt_IRQHandler                            - Undefined Weak Reference
+    ClkTrim_IRQHandler                        - Undefined Weak Reference
+    I2c_IRQHandler                            - Undefined Weak Reference
+    LpTim_IRQHandler                          - Undefined Weak Reference
+    LpUart_IRQHandler                         - Undefined Weak Reference
+    Lvd_IRQHandler                            - Undefined Weak Reference
+    Pca_IRQHandler                            - Undefined Weak Reference
+    Rtc_IRQHandler                            - Undefined Weak Reference
+    Spi_IRQHandler                            - Undefined Weak Reference
+    Vc_IRQHandler                             - Undefined Weak Reference
+    __ARM_exceptions_init                     - Undefined Weak Reference
+    __alloca_initialize                       - Undefined Weak Reference
+    __arm_fini_                               - Undefined Weak Reference
+    __arm_preinit_                            - Undefined Weak Reference
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __rt_locale                               - Undefined Weak Reference
+    __sigvec_lookup                           - Undefined Weak Reference
+    _atexit_init                              - Undefined Weak Reference
+    _call_atexit_fns                          - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _fp_trap_init                             - Undefined Weak Reference
+    _fp_trap_shutdown                         - Undefined Weak Reference
+    _get_lc_collate                           - Undefined Weak Reference
+    _get_lc_ctype                             - Undefined Weak Reference
+    _get_lc_monetary                          - Undefined Weak Reference
+    _get_lc_numeric                           - Undefined Weak Reference
+    _get_lc_time                              - Undefined Weak Reference
+    _getenv_init                              - Undefined Weak Reference
+    _handle_redirection                       - Undefined Weak Reference
+    _init_alloc                               - Undefined Weak Reference
+    _init_user_alloc                          - Undefined Weak Reference
+    _initio                                   - Undefined Weak Reference
+    _rand_init                                - Undefined Weak Reference
+    _signal_finish                            - Undefined Weak Reference
+    _signal_init                              - Undefined Weak Reference
+    _terminate_alloc                          - Undefined Weak Reference
+    _terminate_user_alloc                     - Undefined Weak Reference
+    _terminateio                              - Undefined Weak Reference
+    __Vectors_End                            0x000000c0   Data           0  startup_hc32l110.o(RESET)
+    __Vectors_Size                           0x000000c0   Number         0  startup_hc32l110.o ABSOLUTE
+    __main                                   0x000000c1   Thumb Code     8  __main.o(!!!main)
+    __scatterload                            0x000000c9   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_rt2                        0x000000c9   Thumb Code    52  __scatter.o(!!!scatter)
+    __scatterload_rt2_thumb_only             0x000000c9   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_null                       0x000000d9   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_copy                       0x00000105   Thumb Code    26  __scatter_copy.o(!!handler_copy)
+    __scatterload_zeroinit                   0x00000121   Thumb Code    28  __scatter_zi.o(!!handler_zi)
+    __rt_lib_init                            0x0000013d   Thumb Code     0  libinit.o(.ARM.Collect$$libinit$$00000000)
+    __rt_lib_init_alloca_1                   0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000002E)
+    __rt_lib_init_argv_1                     0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000002C)
+    __rt_lib_init_atexit_1                   0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001B)
+    __rt_lib_init_clock_1                    0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000021)
+    __rt_lib_init_cpp_1                      0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000032)
+    __rt_lib_init_exceptions_1               0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000030)
+    __rt_lib_init_fp_1                       0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000002)
+    __rt_lib_init_fp_trap_1                  0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001F)
+    __rt_lib_init_getenv_1                   0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000023)
+    __rt_lib_init_heap_1                     0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000A)
+    __rt_lib_init_lc_collate_1               0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000011)
+    __rt_lib_init_lc_ctype_1                 0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000013)
+    __rt_lib_init_lc_monetary_1              0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000015)
+    __rt_lib_init_lc_numeric_1               0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000017)
+    __rt_lib_init_lc_time_1                  0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000019)
+    __rt_lib_init_preinit_1                  0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000004)
+    __rt_lib_init_rand_1                     0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000E)
+    __rt_lib_init_return                     0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000033)
+    __rt_lib_init_signal_1                   0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001D)
+    __rt_lib_init_stdio_1                    0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000025)
+    __rt_lib_init_user_alloc_1               0x0000013f   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000C)
+    __rt_lib_shutdown                        0x00000141   Thumb Code     0  libshutdown.o(.ARM.Collect$$libshutdown$$00000000)
+    __rt_lib_shutdown_cpp_1                  0x00000143   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000004)
+    __rt_lib_shutdown_fini_1                 0x00000143   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000002)
+    __rt_lib_shutdown_fp_trap_1              0x00000143   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000009)
+    __rt_lib_shutdown_heap_1                 0x00000143   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000011)
+    __rt_lib_shutdown_return                 0x00000143   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000012)
+    __rt_lib_shutdown_signal_1               0x00000143   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C)
+    __rt_lib_shutdown_stdio_1                0x00000143   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000006)
+    __rt_lib_shutdown_user_alloc_1           0x00000143   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E)
+    __rt_entry                               0x00000145   Thumb Code     0  __rtentry.o(.ARM.Collect$$rtentry$$00000000)
+    __rt_entry_presh_1                       0x00000145   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$00000002)
+    __rt_entry_sh                            0x00000145   Thumb Code     0  __rtentry4.o(.ARM.Collect$$rtentry$$00000004)
+    __rt_entry_li                            0x0000014b   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000A)
+    __rt_entry_postsh_1                      0x0000014b   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$00000009)
+    __rt_entry_main                          0x0000014f   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
+    __rt_entry_postli_1                      0x0000014f   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000C)
+    __rt_exit                                0x00000157   Thumb Code     0  rtexit.o(.ARM.Collect$$rtexit$$00000000)
+    __rt_exit_ls                             0x00000159   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000003)
+    __rt_exit_prels_1                        0x00000159   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000002)
+    __rt_exit_exit                           0x0000015d   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
+    Reset_Handler                            0x00000165   Thumb Code    26  startup_hc32l110.o(.text)
+    NMI_Handler                              0x0000017f   Thumb Code     2  startup_hc32l110.o(.text)
+    SVC_Handler                              0x00000183   Thumb Code     2  startup_hc32l110.o(.text)
+    PendSV_Handler                           0x00000185   Thumb Code     2  startup_hc32l110.o(.text)
+    SysTick_Handler                          0x00000187   Thumb Code     2  startup_hc32l110.o(.text)
+    IRQ004_Handler                           0x00000189   Thumb Code     0  startup_hc32l110.o(.text)
+    IRQ005_Handler                           0x00000189   Thumb Code     0  startup_hc32l110.o(.text)
+    IRQ009_Handler                           0x00000189   Thumb Code     0  startup_hc32l110.o(.text)
+    IRQ011_Handler                           0x00000189   Thumb Code     0  startup_hc32l110.o(.text)
+    IRQ013_Handler                           0x00000189   Thumb Code     0  startup_hc32l110.o(.text)
+    IRQ025_Handler                           0x00000189   Thumb Code     0  startup_hc32l110.o(.text)
+    IRQ029_Handler                           0x00000189   Thumb Code     0  startup_hc32l110.o(.text)
+    __user_initial_stackheap                 0x0000018d   Thumb Code     0  startup_hc32l110.o(.text)
+    __use_no_semihosting                     0x000001bd   Thumb Code     2  use_no_semi_2.o(.text)
+    __aeabi_uidiv                            0x000001bf   Thumb Code     0  aeabi_sdiv.o(.text)
+    __aeabi_uidivmod                         0x000001bf   Thumb Code    20  aeabi_sdiv.o(.text)
+    __aeabi_idiv                             0x000001d3   Thumb Code     0  aeabi_sdiv.o(.text)
+    __aeabi_idivmod                          0x000001d3   Thumb Code   326  aeabi_sdiv.o(.text)
+    __use_two_region_memory                  0x00000319   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_escrow$2region                 0x0000031b   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_expand$2region                 0x0000031d   Thumb Code     2  heapauxi.o(.text)
+    __I$use$semihosting                      0x0000031f   Thumb Code     0  use_no_semi.o(.text)
+    __use_no_semihosting_swi                 0x0000031f   Thumb Code     2  use_no_semi.o(.text)
+    __user_setup_stackheap                   0x00000321   Thumb Code    62  sys_stackheap_outer.o(.text)
+    exit                                     0x0000035f   Thumb Code    16  exit.o(.text)
+    __user_libspace                          0x00000371   Thumb Code     8  libspace.o(.text)
+    __user_perproc_libspace                  0x00000371   Thumb Code     0  libspace.o(.text)
+    __user_perthread_libspace                0x00000371   Thumb Code     0  libspace.o(.text)
+    App_ClkInit                              0x00000379   Thumb Code   142  sys.o(i.App_ClkInit)
+    App_Timer0Cfg                            0x00000409   Thumb Code    90  timers.o(i.App_Timer0Cfg)
+    Bt0Int                                   0x00000595   Thumb Code    44  timers.o(i.Bt0Int)
+    Bt_ARRSet                                0x000005c5   Thumb Code    62  bt_1.o(i.Bt_ARRSet)
+    Bt_ClearIntFlag                          0x00000609   Thumb Code    56  bt_1.o(i.Bt_ClearIntFlag)
+    Bt_Cnt16Set                              0x00000645   Thumb Code    62  bt_1.o(i.Bt_Cnt16Set)
+    Bt_EnableIrq                             0x00000689   Thumb Code    52  bt_1.o(i.Bt_EnableIrq)
+    Bt_GetIntFlag                            0x000006c1   Thumb Code    38  bt_1.o(i.Bt_GetIntFlag)
+    Bt_Init                                  0x000006ed   Thumb Code   324  bt_1.o(i.Bt_Init)
+    Bt_Run                                   0x00000839   Thumb Code    52  bt_1.o(i.Bt_Run)
+    Clk_Enable                               0x0000089d   Thumb Code   180  clk_1.o(i.Clk_Enable)
+    Clk_GetClkRdy                            0x00000959   Thumb Code    46  clk_1.o(i.Clk_GetClkRdy)
+    Clk_GetHClkFreq                          0x0000098d   Thumb Code   112  clk_1.o(i.Clk_GetHClkFreq)
+    Clk_GetPClkFreq                          0x00000a1d   Thumb Code    18  clk_1.o(i.Clk_GetPClkFreq)
+    Clk_Init                                 0x00000a35   Thumb Code    26  clk_1.o(i.Clk_Init)
+    Clk_SetHClkDiv                           0x00000a51   Thumb Code    76  clk_1.o(i.Clk_SetHClkDiv)
+    Clk_SetPClkDiv                           0x00000aa1   Thumb Code    56  clk_1.o(i.Clk_SetPClkDiv)
+    Clk_SetPeripheralGate                    0x00000add   Thumb Code    38  clk_1.o(i.Clk_SetPeripheralGate)
+    Clk_SetRCHFreq                           0x00000b09   Thumb Code    64  clk_1.o(i.Clk_SetRCHFreq)
+    Clk_SetRCLFreq                           0x00000b51   Thumb Code    42  clk_1.o(i.Clk_SetRCLFreq)
+    Clk_SetRCL_StableTime                    0x00000b85   Thumb Code    68  clk_1.o(i.Clk_SetRCL_StableTime)
+    Clk_SetSource                            0x00000bcd   Thumb Code    54  clk_1.o(i.Clk_SetSource)
+    Clk_SetXTH_StableTime                    0x00000c09   Thumb Code    58  clk_1.o(i.Clk_SetXTH_StableTime)
+    Clk_SetXTL_StableTime                    0x00000c49   Thumb Code    58  clk_1.o(i.Clk_SetXTL_StableTime)
+    Clk_SwitchTo                             0x00000c89   Thumb Code   130  clk_1.o(i.Clk_SwitchTo)
+    Clk_SysTickConfig                        0x00000d1d   Thumb Code   126  clk_1.o(i.Clk_SysTickConfig)
+    EfRam_IRQHandler                         0x00000da9   Thumb Code     6  flash_1.o(i.EfRam_IRQHandler)
+    EnableNvic                               0x00000db5   Thumb Code   112  interrupts_hc32l110_1.o(i.EnableNvic)
+    ErrIntCallback                           0x00000e35   Thumb Code     2  usart.o(i.ErrIntCallback)
+    GetCheckHe                               0x00000e37   Thumb Code    26  sys.o(i.GetCheckHe)
+    GetRelaybuf11                            0x00000e51   Thumb Code    56  relayapp.o(i.GetRelaybuf11)
+    Get_MyMac                                0x00000e8d   Thumb Code    46  key.o(i.Get_MyMac)
+    Gpio_ClearIrq                            0x00000ec1   Thumb Code    20  gpio_1.o(i.Gpio_ClearIrq)
+    Gpio_EnableIrq                           0x00000ed9   Thumb Code    12  gpio_1.o(i.Gpio_EnableIrq)
+    Gpio_GetIO                               0x00000ee5   Thumb Code    16  gpio_1.o(i.Gpio_GetIO)
+    Gpio_IRQHandler                          0x00000ef9   Thumb Code    22  tg.o(i.Gpio_IRQHandler)
+    Gpio_InitIOExt                           0x00000f15   Thumb Code   132  gpio_1.o(i.Gpio_InitIOExt)
+    Gpio_SetAnalog                           0x00000fa5   Thumb Code    30  gpio_1.o(i.Gpio_SetAnalog)
+    Gpio_SetIO                               0x00000fc9   Thumb Code    38  gpio_1.o(i.Gpio_SetIO)
+    HardFault_Handler                        0x00000ff5   Thumb Code    12  interrupts_hc32l110_1.o(i.HardFault_Handler)
+    IRQ000_Handler                           0x00001001   Thumb Code    10  interrupts_hc32l110_1.o(i.IRQ000_Handler)
+    IRQ001_Handler                           0x0000100b   Thumb Code    10  interrupts_hc32l110_1.o(i.IRQ001_Handler)
+    IRQ002_Handler                           0x00001015   Thumb Code    10  interrupts_hc32l110_1.o(i.IRQ002_Handler)
+    IRQ003_Handler                           0x0000101f   Thumb Code    10  interrupts_hc32l110_1.o(i.IRQ003_Handler)
+    IRQ006_Handler                           0x00001029   Thumb Code    10  interrupts_hc32l110_1.o(i.IRQ006_Handler)
+    IRQ007_Handler                           0x00001033   Thumb Code    10  interrupts_hc32l110_1.o(i.IRQ007_Handler)
+    IRQ008_Handler                           0x0000103d   Thumb Code    10  interrupts_hc32l110_1.o(i.IRQ008_Handler)
+    IRQ010_Handler                           0x00001047   Thumb Code    10  interrupts_hc32l110_1.o(i.IRQ010_Handler)
+    IRQ012_Handler                           0x00001051   Thumb Code    10  interrupts_hc32l110_1.o(i.IRQ012_Handler)
+    IRQ014_Handler                           0x0000105b   Thumb Code    10  interrupts_hc32l110_1.o(i.IRQ014_Handler)
+    IRQ015_Handler                           0x00001065   Thumb Code    10  interrupts_hc32l110_1.o(i.IRQ015_Handler)
+    IRQ016_Handler                           0x0000106f   Thumb Code    10  interrupts_hc32l110_1.o(i.IRQ016_Handler)
+    IRQ017_Handler                           0x00001079   Thumb Code    10  interrupts_hc32l110_1.o(i.IRQ017_Handler)
+    IRQ018_Handler                           0x00001083   Thumb Code    10  interrupts_hc32l110_1.o(i.IRQ018_Handler)
+    IRQ019_Handler                           0x0000108d   Thumb Code    10  interrupts_hc32l110_1.o(i.IRQ019_Handler)
+    IRQ020_Handler                           0x00001097   Thumb Code    10  interrupts_hc32l110_1.o(i.IRQ020_Handler)
+    IRQ021_Handler                           0x000010a1   Thumb Code    10  interrupts_hc32l110_1.o(i.IRQ021_Handler)
+    IRQ022_Handler                           0x000010ab   Thumb Code    10  interrupts_hc32l110_1.o(i.IRQ022_Handler)
+    IRQ023_Handler                           0x000010b5   Thumb Code    10  interrupts_hc32l110_1.o(i.IRQ023_Handler)
+    IRQ024_Handler                           0x000010bf   Thumb Code    10  interrupts_hc32l110_1.o(i.IRQ024_Handler)
+    IRQ026_Handler                           0x000010c9   Thumb Code    10  interrupts_hc32l110_1.o(i.IRQ026_Handler)
+    IRQ027_Handler                           0x000010d3   Thumb Code    10  interrupts_hc32l110_1.o(i.IRQ027_Handler)
+    IRQ028_Handler                           0x000010dd   Thumb Code    10  interrupts_hc32l110_1.o(i.IRQ028_Handler)
+    IRQ030_Handler                           0x000010e7   Thumb Code    10  interrupts_hc32l110_1.o(i.IRQ030_Handler)
+    IRQ031_Handler                           0x000010f1   Thumb Code    10  interrupts_hc32l110_1.o(i.IRQ031_Handler)
+    LED_Init                                 0x000010fb   Thumb Code    18  led.o(i.LED_Init)
+    Log2                                     0x0000110d   Thumb Code    20  ddl_1.o(i.Log2)
+    RcuData_rev                              0x00001121   Thumb Code   390  relayapp.o(i.RcuData_rev)
+    Relay_sub                                0x000012ad   Thumb Code   390  relayapp.o(i.Relay_sub)
+    RxIntCallback                            0x00001445   Thumb Code    16  usart.o(i.RxIntCallback)
+    SystemCoreClockUpdate                    0x00001459   Thumb Code    12  system_hc32l110.o(i.SystemCoreClockUpdate)
+    SystemInit                               0x00001469   Thumb Code    46  system_hc32l110.o(i.SystemInit)
+    TG_Init                                  0x0000149d   Thumb Code    90  tg.o(i.TG_Init)
+    TG_TimOVR                                0x000014fd   Thumb Code   112  tg.o(i.TG_TimOVR)
+    TG_Work                                  0x00001571   Thumb Code   284  tg.o(i.TG_Work)
+    TG_ZeroEX                                0x00001699   Thumb Code    46  tg.o(i.TG_ZeroEX)
+    Thread_Ms_sub                            0x000016d1   Thumb Code    24  main.o(i.Thread_Ms_sub)
+    Tim_IRQHandler                           0x000016ed   Thumb Code    28  bt_1.o(i.Tim_IRQHandler)
+    UART1_R_Interr                           0x0000170d   Thumb Code    40  usart.o(i.UART1_R_Interr)
+    UART1_ReadBoxSUB                         0x0000173d   Thumb Code    38  usart.o(i.UART1_ReadBoxSUB)
+    UART1_try                                0x0000176d   Thumb Code     2  usart.o(i.UART1_try)
+    Uart_ClrStatus                           0x0000179d   Thumb Code    60  uart_1.o(i.Uart_ClrStatus)
+    Uart_EnableFunc                          0x000017d9   Thumb Code    36  uart_1.o(i.Uart_EnableFunc)
+    Uart_EnableIrq                           0x000017fd   Thumb Code    46  uart_1.o(i.Uart_EnableIrq)
+    Uart_IRQHandler                          0x0000182b   Thumb Code    80  uart_1.o(i.Uart_IRQHandler)
+    Uart_Init                                0x0000187d   Thumb Code   140  uart_1.o(i.Uart_Init)
+    Uart_SetBaudRate                         0x0000190d   Thumb Code    90  uart_1.o(i.Uart_SetBaudRate)
+    Uart_SetMode                             0x00001967   Thumb Code    36  uart_1.o(i.Uart_SetMode)
+    Uart_SetMultiMode                        0x0000198b   Thumb Code    62  uart_1.o(i.Uart_SetMultiMode)
+    Wdt_Feed                                 0x000019c9   Thumb Code    12  wdt_1.o(i.Wdt_Feed)
+    Wdt_IRQHandler                           0x000019d9   Thumb Code    26  wdt_1.o(i.Wdt_IRQHandler)
+    Wdt_Init                                 0x000019fd   Thumb Code    58  wdt_1.o(i.Wdt_Init)
+    Wdt_Start                                0x00001a41   Thumb Code    14  wdt_1.o(i.Wdt_Start)
+    Wdt_WriteWdtLoad                         0x00001a55   Thumb Code    18  wdt_1.o(i.Wdt_WriteWdtLoad)
+    ZeroDelay                                0x00001a6d   Thumb Code    52  tg.o(i.ZeroDelay)
+    ZeroEX                                   0x00001aa9   Thumb Code    22  tg.o(i.ZeroEX)
+    _GpioEnableIrq                           0x00001ac9   Thumb Code    90  gpio_1.o(i._GpioEnableIrq)
+    __ARM_common_switch8                     0x00001b29   Thumb Code    26  gpio_1.o(i.__ARM_common_switch8)
+    _sys_exit                                0x00001ba1   Thumb Code     2  ddl_1.o(i._sys_exit)
+    crc_chk_value                            0x00001ba5   Thumb Code    48  sys.o(i.crc_chk_value)
+    ddl_memclr                               0x00001bdd   Thumb Code    18  ddl_1.o(i.ddl_memclr)
+    delay_us                                 0x00001bef   Thumb Code    64  sys.o(i.delay_us)
+    h595d_init                               0x00001c2f   Thumb Code    34  led.o(i.h595d_init)
+    h595d_write                              0x00001c51   Thumb Code   142  led.o(i.h595d_write)
+    init                                     0x00001ce1   Thumb Code    60  main.o(i.init)
+    io_init                                  0x00001d21   Thumb Code    64  sys.o(i.io_init)
+    jishu_sub                                0x00001d61   Thumb Code    42  tg.o(i.jishu_sub)
+    key_init                                 0x00001d91   Thumb Code    24  key.o(i.key_init)
+    led_set                                  0x00001da9   Thumb Code    30  led.o(i.led_set)
+    led_shan                                 0x00001dc9   Thumb Code    16  led.o(i.led_shan)
+    led_shan_sub                             0x00001ddd   Thumb Code    74  led.o(i.led_shan_sub)
+    main                                     0x00001e31   Thumb Code    10  main.o(i.main)
+    relay_closeA_SBuf                        0x00001e3b   Thumb Code    52  led.o(i.relay_closeA_SBuf)
+    relay_set                                0x00001e71   Thumb Code    46  led.o(i.relay_set)
+    timer0_Init                              0x00001ea9   Thumb Code    44  timers.o(i.timer0_Init)
+    uart1_init                               0x00001ed5   Thumb Code    28  usart.o(i.uart1_init)
+    wdog_init                                0x00001ef1   Thumb Code    40  sys.o(i.wdog_init)
+    xunSub_diao                              0x00001f19   Thumb Code   118  xunsub.o(i.xunSub_diao)
+    xunSub_timer                             0x00001f99   Thumb Code    80  xunsub.o(i.xunSub_timer)
+    Region$$Table$$Base                      0x00001ff8   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00002018   Number         0  anon$$obj.o(Region$$Table)
+    SystemCoreClock                          0x20000000   Data           4  system_hc32l110.o(.data)
+    S_timers                                 0x20000004   Data           1  led.o(.data)
+    led_shan_num                             0x20000008   Data           4  led.o(.data)
+    S_PIN                                    0x2000000c   Data           4  led.o(.data)
+    relaySX_tab                              0x20000010   Data          24  led.o(.data)
+    relayBF_tab                              0x20000028   Data          24  led.o(.data)
+    BufRead_JiShi                            0x20000040   Data           1  usart.o(.data)
+    TG1_V                                    0x20000044   Data           1  tg.o(.data)
+    TG2_V                                    0x20000045   Data           1  tg.o(.data)
+    zero_en                                  0x20000046   Data           1  tg.o(.data)
+    tg_jianliang1                            0x20000047   Data           1  tg.o(.data)
+    tg_jianliang2                            0x20000048   Data           1  tg.o(.data)
+    suLv_num                                 0x20000049   Data           1  tg.o(.data)
+    TG1_SV                                   0x2000004a   Data           1  tg.o(.data)
+    TG2_SV                                   0x2000004b   Data           1  tg.o(.data)
+    TG1_num                                  0x2000004c   Data           4  tg.o(.data)
+    TG2_num                                  0x20000050   Data           4  tg.o(.data)
+    zero_delay                               0x20000054   Data           4  tg.o(.data)
+    tg_buf                                   0x20000058   Data           6  tg.o(.data)
+    xunSub_num                               0x2000009c   Data           4  xunsub.o(.data)
+    Rcu_type                                 0x200000a0   Data           1  relayapp.o(.data)
+    opens                                    0x200000a1   Data           1  relayapp.o(.data)
+    MCU_flag                                 0x200000a4   Data         204  sys.o(.bss)
+    xunSub_jishi                             0x20000170   Data          40  xunsub.o(.bss)
+    __libspace_start                         0x20000198   Data          96  libspace.o(.bss)
+    __temporary_stack_top$libspace           0x200001f8   Data           0  libspace.o(.bss)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x000000c1
+
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x000020bc, Max: 0x00008000, ABSOLUTE)
+
+    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00002018, Max: 0x00008000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000000   0x000000c0   Data   RO           87    RESET               startup_hc32l110.o
+    0x000000c0   0x000000c0   0x00000008   Code   RO         1609  * !!!main             c_p.l(__main.o)
+    0x000000c8   0x000000c8   0x0000003c   Code   RO         1776    !!!scatter          c_p.l(__scatter.o)
+    0x00000104   0x00000104   0x0000001a   Code   RO         1778    !!handler_copy      c_p.l(__scatter_copy.o)
+    0x0000011e   0x0000011e   0x00000002   PAD
+    0x00000120   0x00000120   0x0000001c   Code   RO         1780    !!handler_zi        c_p.l(__scatter_zi.o)
+    0x0000013c   0x0000013c   0x00000002   Code   RO         1649    .ARM.Collect$$libinit$$00000000  c_p.l(libinit.o)
+    0x0000013e   0x0000013e   0x00000000   Code   RO         1663    .ARM.Collect$$libinit$$00000002  c_p.l(libinit2.o)
+    0x0000013e   0x0000013e   0x00000000   Code   RO         1665    .ARM.Collect$$libinit$$00000004  c_p.l(libinit2.o)
+    0x0000013e   0x0000013e   0x00000000   Code   RO         1668    .ARM.Collect$$libinit$$0000000A  c_p.l(libinit2.o)
+    0x0000013e   0x0000013e   0x00000000   Code   RO         1670    .ARM.Collect$$libinit$$0000000C  c_p.l(libinit2.o)
+    0x0000013e   0x0000013e   0x00000000   Code   RO         1672    .ARM.Collect$$libinit$$0000000E  c_p.l(libinit2.o)
+    0x0000013e   0x0000013e   0x00000000   Code   RO         1675    .ARM.Collect$$libinit$$00000011  c_p.l(libinit2.o)
+    0x0000013e   0x0000013e   0x00000000   Code   RO         1677    .ARM.Collect$$libinit$$00000013  c_p.l(libinit2.o)
+    0x0000013e   0x0000013e   0x00000000   Code   RO         1679    .ARM.Collect$$libinit$$00000015  c_p.l(libinit2.o)
+    0x0000013e   0x0000013e   0x00000000   Code   RO         1681    .ARM.Collect$$libinit$$00000017  c_p.l(libinit2.o)
+    0x0000013e   0x0000013e   0x00000000   Code   RO         1683    .ARM.Collect$$libinit$$00000019  c_p.l(libinit2.o)
+    0x0000013e   0x0000013e   0x00000000   Code   RO         1685    .ARM.Collect$$libinit$$0000001B  c_p.l(libinit2.o)
+    0x0000013e   0x0000013e   0x00000000   Code   RO         1687    .ARM.Collect$$libinit$$0000001D  c_p.l(libinit2.o)
+    0x0000013e   0x0000013e   0x00000000   Code   RO         1689    .ARM.Collect$$libinit$$0000001F  c_p.l(libinit2.o)
+    0x0000013e   0x0000013e   0x00000000   Code   RO         1691    .ARM.Collect$$libinit$$00000021  c_p.l(libinit2.o)
+    0x0000013e   0x0000013e   0x00000000   Code   RO         1693    .ARM.Collect$$libinit$$00000023  c_p.l(libinit2.o)
+    0x0000013e   0x0000013e   0x00000000   Code   RO         1695    .ARM.Collect$$libinit$$00000025  c_p.l(libinit2.o)
+    0x0000013e   0x0000013e   0x00000000   Code   RO         1699    .ARM.Collect$$libinit$$0000002C  c_p.l(libinit2.o)
+    0x0000013e   0x0000013e   0x00000000   Code   RO         1701    .ARM.Collect$$libinit$$0000002E  c_p.l(libinit2.o)
+    0x0000013e   0x0000013e   0x00000000   Code   RO         1703    .ARM.Collect$$libinit$$00000030  c_p.l(libinit2.o)
+    0x0000013e   0x0000013e   0x00000000   Code   RO         1705    .ARM.Collect$$libinit$$00000032  c_p.l(libinit2.o)
+    0x0000013e   0x0000013e   0x00000002   Code   RO         1706    .ARM.Collect$$libinit$$00000033  c_p.l(libinit2.o)
+    0x00000140   0x00000140   0x00000002   Code   RO         1730    .ARM.Collect$$libshutdown$$00000000  c_p.l(libshutdown.o)
+    0x00000142   0x00000142   0x00000000   Code   RO         1756    .ARM.Collect$$libshutdown$$00000002  c_p.l(libshutdown2.o)
+    0x00000142   0x00000142   0x00000000   Code   RO         1758    .ARM.Collect$$libshutdown$$00000004  c_p.l(libshutdown2.o)
+    0x00000142   0x00000142   0x00000000   Code   RO         1760    .ARM.Collect$$libshutdown$$00000006  c_p.l(libshutdown2.o)
+    0x00000142   0x00000142   0x00000000   Code   RO         1763    .ARM.Collect$$libshutdown$$00000009  c_p.l(libshutdown2.o)
+    0x00000142   0x00000142   0x00000000   Code   RO         1766    .ARM.Collect$$libshutdown$$0000000C  c_p.l(libshutdown2.o)
+    0x00000142   0x00000142   0x00000000   Code   RO         1768    .ARM.Collect$$libshutdown$$0000000E  c_p.l(libshutdown2.o)
+    0x00000142   0x00000142   0x00000000   Code   RO         1771    .ARM.Collect$$libshutdown$$00000011  c_p.l(libshutdown2.o)
+    0x00000142   0x00000142   0x00000002   Code   RO         1772    .ARM.Collect$$libshutdown$$00000012  c_p.l(libshutdown2.o)
+    0x00000144   0x00000144   0x00000000   Code   RO         1613    .ARM.Collect$$rtentry$$00000000  c_p.l(__rtentry.o)
+    0x00000144   0x00000144   0x00000000   Code   RO         1619    .ARM.Collect$$rtentry$$00000002  c_p.l(__rtentry2.o)
+    0x00000144   0x00000144   0x00000006   Code   RO         1631    .ARM.Collect$$rtentry$$00000004  c_p.l(__rtentry4.o)
+    0x0000014a   0x0000014a   0x00000000   Code   RO         1621    .ARM.Collect$$rtentry$$00000009  c_p.l(__rtentry2.o)
+    0x0000014a   0x0000014a   0x00000004   Code   RO         1622    .ARM.Collect$$rtentry$$0000000A  c_p.l(__rtentry2.o)
+    0x0000014e   0x0000014e   0x00000000   Code   RO         1624    .ARM.Collect$$rtentry$$0000000C  c_p.l(__rtentry2.o)
+    0x0000014e   0x0000014e   0x00000008   Code   RO         1625    .ARM.Collect$$rtentry$$0000000D  c_p.l(__rtentry2.o)
+    0x00000156   0x00000156   0x00000002   Code   RO         1654    .ARM.Collect$$rtexit$$00000000  c_p.l(rtexit.o)
+    0x00000158   0x00000158   0x00000000   Code   RO         1708    .ARM.Collect$$rtexit$$00000002  c_p.l(rtexit2.o)
+    0x00000158   0x00000158   0x00000004   Code   RO         1709    .ARM.Collect$$rtexit$$00000003  c_p.l(rtexit2.o)
+    0x0000015c   0x0000015c   0x00000006   Code   RO         1710    .ARM.Collect$$rtexit$$00000004  c_p.l(rtexit2.o)
+    0x00000162   0x00000162   0x00000002   PAD
+    0x00000164   0x00000164   0x00000058   Code   RO           88    .text               startup_hc32l110.o
+    0x000001bc   0x000001bc   0x00000002   Code   RO         1601    .text               c_p.l(use_no_semi_2.o)
+    0x000001be   0x000001be   0x0000015a   Code   RO         1603    .text               c_p.l(aeabi_sdiv.o)
+    0x00000318   0x00000318   0x00000006   Code   RO         1607    .text               c_p.l(heapauxi.o)
+    0x0000031e   0x0000031e   0x00000002   Code   RO         1611    .text               c_p.l(use_no_semi.o)
+    0x00000320   0x00000320   0x0000003e   Code   RO         1635    .text               c_p.l(sys_stackheap_outer.o)
+    0x0000035e   0x0000035e   0x00000010   Code   RO         1638    .text               c_p.l(exit.o)
+    0x0000036e   0x0000036e   0x00000002   PAD
+    0x00000370   0x00000370   0x00000008   Code   RO         1650    .text               c_p.l(libspace.o)
+    0x00000378   0x00000378   0x0000008e   Code   RO          226    i.App_ClkInit       sys.o
+    0x00000406   0x00000406   0x00000002   PAD
+    0x00000408   0x00000408   0x00000064   Code   RO          559    i.App_Timer0Cfg     timers.o
+    0x0000046c   0x0000046c   0x00000128   Code   RO          321    i.App_UartInit      usart.o
+    0x00000594   0x00000594   0x00000030   Code   RO          561    i.Bt0Int            timers.o
+    0x000005c4   0x000005c4   0x00000044   Code   RO         1142    i.Bt_ARRSet         bt_1.o
+    0x00000608   0x00000608   0x0000003c   Code   RO         1143    i.Bt_ClearIntFlag   bt_1.o
+    0x00000644   0x00000644   0x00000044   Code   RO         1145    i.Bt_Cnt16Set       bt_1.o
+    0x00000688   0x00000688   0x00000038   Code   RO         1149    i.Bt_EnableIrq      bt_1.o
+    0x000006c0   0x000006c0   0x0000002c   Code   RO         1150    i.Bt_GetIntFlag     bt_1.o
+    0x000006ec   0x000006ec   0x0000014c   Code   RO         1151    i.Bt_Init           bt_1.o
+    0x00000838   0x00000838   0x00000038   Code   RO         1152    i.Bt_Run            bt_1.o
+    0x00000870   0x00000870   0x00000018   Code   RO          970    i.ClkUnlock         clk_1.o
+    0x00000888   0x00000888   0x00000014   Code   RO          971    i.ClkWriteDummy     clk_1.o
+    0x0000089c   0x0000089c   0x000000bc   Code   RO          974    i.Clk_Enable        clk_1.o
+    0x00000958   0x00000958   0x00000034   Code   RO          975    i.Clk_GetClkRdy     clk_1.o
+    0x0000098c   0x0000098c   0x00000090   Code   RO          976    i.Clk_GetHClkFreq   clk_1.o
+    0x00000a1c   0x00000a1c   0x00000018   Code   RO          977    i.Clk_GetPClkFreq   clk_1.o
+    0x00000a34   0x00000a34   0x0000001a   Code   RO          979    i.Clk_Init          clk_1.o
+    0x00000a4e   0x00000a4e   0x00000002   PAD
+    0x00000a50   0x00000a50   0x00000050   Code   RO          981    i.Clk_SetHClkDiv    clk_1.o
+    0x00000aa0   0x00000aa0   0x0000003c   Code   RO          982    i.Clk_SetPClkDiv    clk_1.o
+    0x00000adc   0x00000adc   0x0000002c   Code   RO          983    i.Clk_SetPeripheralGate  clk_1.o
+    0x00000b08   0x00000b08   0x00000048   Code   RO          984    i.Clk_SetRCHFreq    clk_1.o
+    0x00000b50   0x00000b50   0x00000034   Code   RO          985    i.Clk_SetRCLFreq    clk_1.o
+    0x00000b84   0x00000b84   0x00000048   Code   RO          986    i.Clk_SetRCL_StableTime  clk_1.o
+    0x00000bcc   0x00000bcc   0x0000003c   Code   RO          988    i.Clk_SetSource     clk_1.o
+    0x00000c08   0x00000c08   0x00000040   Code   RO          989    i.Clk_SetXTH_StableTime  clk_1.o
+    0x00000c48   0x00000c48   0x00000040   Code   RO          991    i.Clk_SetXTL_StableTime  clk_1.o
+    0x00000c88   0x00000c88   0x00000094   Code   RO          992    i.Clk_SwitchTo      clk_1.o
+    0x00000d1c   0x00000d1c   0x0000008c   Code   RO          993    i.Clk_SysTickConfig  clk_1.o
+    0x00000da8   0x00000da8   0x0000000c   Code   RO         1378    i.EfRam_IRQHandler  flash_1.o
+    0x00000db4   0x00000db4   0x00000080   Code   RO          791    i.EnableNvic        interrupts_hc32l110_1.o
+    0x00000e34   0x00000e34   0x00000002   Code   RO          322    i.ErrIntCallback    usart.o
+    0x00000e36   0x00000e36   0x0000001a   Code   RO          231    i.GetCheckHe        sys.o
+    0x00000e50   0x00000e50   0x0000003c   Code   RO         1554    i.GetRelaybuf11     relayapp.o
+    0x00000e8c   0x00000e8c   0x00000034   Code   RO           94    i.Get_MyMac         key.o
+    0x00000ec0   0x00000ec0   0x00000018   Code   RO          691    i.Gpio_ClearIrq     gpio_1.o
+    0x00000ed8   0x00000ed8   0x0000000c   Code   RO          693    i.Gpio_EnableIrq    gpio_1.o
+    0x00000ee4   0x00000ee4   0x00000014   Code   RO          694    i.Gpio_GetIO        gpio_1.o
+    0x00000ef8   0x00000ef8   0x0000001c   Code   RO          432    i.Gpio_IRQHandler   tg.o
+    0x00000f14   0x00000f14   0x00000090   Code   RO          697    i.Gpio_InitIOExt    gpio_1.o
+    0x00000fa4   0x00000fa4   0x00000024   Code   RO          698    i.Gpio_SetAnalog    gpio_1.o
+    0x00000fc8   0x00000fc8   0x0000002c   Code   RO          701    i.Gpio_SetIO        gpio_1.o
+    0x00000ff4   0x00000ff4   0x0000000c   Code   RO          792    i.HardFault_Handler  interrupts_hc32l110_1.o
+    0x00001000   0x00001000   0x0000000a   Code   RO          793    i.IRQ000_Handler    interrupts_hc32l110_1.o
+    0x0000100a   0x0000100a   0x0000000a   Code   RO          794    i.IRQ001_Handler    interrupts_hc32l110_1.o
+    0x00001014   0x00001014   0x0000000a   Code   RO          795    i.IRQ002_Handler    interrupts_hc32l110_1.o
+    0x0000101e   0x0000101e   0x0000000a   Code   RO          796    i.IRQ003_Handler    interrupts_hc32l110_1.o
+    0x00001028   0x00001028   0x0000000a   Code   RO          797    i.IRQ006_Handler    interrupts_hc32l110_1.o
+    0x00001032   0x00001032   0x0000000a   Code   RO          798    i.IRQ007_Handler    interrupts_hc32l110_1.o
+    0x0000103c   0x0000103c   0x0000000a   Code   RO          799    i.IRQ008_Handler    interrupts_hc32l110_1.o
+    0x00001046   0x00001046   0x0000000a   Code   RO          800    i.IRQ010_Handler    interrupts_hc32l110_1.o
+    0x00001050   0x00001050   0x0000000a   Code   RO          801    i.IRQ012_Handler    interrupts_hc32l110_1.o
+    0x0000105a   0x0000105a   0x0000000a   Code   RO          802    i.IRQ014_Handler    interrupts_hc32l110_1.o
+    0x00001064   0x00001064   0x0000000a   Code   RO          803    i.IRQ015_Handler    interrupts_hc32l110_1.o
+    0x0000106e   0x0000106e   0x0000000a   Code   RO          804    i.IRQ016_Handler    interrupts_hc32l110_1.o
+    0x00001078   0x00001078   0x0000000a   Code   RO          805    i.IRQ017_Handler    interrupts_hc32l110_1.o
+    0x00001082   0x00001082   0x0000000a   Code   RO          806    i.IRQ018_Handler    interrupts_hc32l110_1.o
+    0x0000108c   0x0000108c   0x0000000a   Code   RO          807    i.IRQ019_Handler    interrupts_hc32l110_1.o
+    0x00001096   0x00001096   0x0000000a   Code   RO          808    i.IRQ020_Handler    interrupts_hc32l110_1.o
+    0x000010a0   0x000010a0   0x0000000a   Code   RO          809    i.IRQ021_Handler    interrupts_hc32l110_1.o
+    0x000010aa   0x000010aa   0x0000000a   Code   RO          810    i.IRQ022_Handler    interrupts_hc32l110_1.o
+    0x000010b4   0x000010b4   0x0000000a   Code   RO          811    i.IRQ023_Handler    interrupts_hc32l110_1.o
+    0x000010be   0x000010be   0x0000000a   Code   RO          812    i.IRQ024_Handler    interrupts_hc32l110_1.o
+    0x000010c8   0x000010c8   0x0000000a   Code   RO          813    i.IRQ026_Handler    interrupts_hc32l110_1.o
+    0x000010d2   0x000010d2   0x0000000a   Code   RO          814    i.IRQ027_Handler    interrupts_hc32l110_1.o
+    0x000010dc   0x000010dc   0x0000000a   Code   RO          815    i.IRQ028_Handler    interrupts_hc32l110_1.o
+    0x000010e6   0x000010e6   0x0000000a   Code   RO          816    i.IRQ030_Handler    interrupts_hc32l110_1.o
+    0x000010f0   0x000010f0   0x0000000a   Code   RO          817    i.IRQ031_Handler    interrupts_hc32l110_1.o
+    0x000010fa   0x000010fa   0x00000012   Code   RO          149    i.LED_Init          led.o
+    0x0000110c   0x0000110c   0x00000014   Code   RO          613    i.Log2              ddl_1.o
+    0x00001120   0x00001120   0x0000018c   Code   RO         1555    i.RcuData_rev       relayapp.o
+    0x000012ac   0x000012ac   0x00000198   Code   RO         1556    i.Relay_sub         relayapp.o
+    0x00001444   0x00001444   0x00000014   Code   RO          323    i.RxIntCallback     usart.o
+    0x00001458   0x00001458   0x00000010   Code   RO            3    i.SystemCoreClockUpdate  system_hc32l110.o
+    0x00001468   0x00001468   0x00000034   Code   RO            4    i.SystemInit        system_hc32l110.o
+    0x0000149c   0x0000149c   0x00000060   Code   RO          433    i.TG_Init           tg.o
+    0x000014fc   0x000014fc   0x00000074   Code   RO          435    i.TG_TimOVR         tg.o
+    0x00001570   0x00001570   0x00000128   Code   RO          436    i.TG_Work           tg.o
+    0x00001698   0x00001698   0x00000038   Code   RO          437    i.TG_ZeroEX         tg.o
+    0x000016d0   0x000016d0   0x0000001c   Code   RO          514    i.Thread_Ms_sub     main.o
+    0x000016ec   0x000016ec   0x00000020   Code   RO         1154    i.Tim_IRQHandler    bt_1.o
+    0x0000170c   0x0000170c   0x00000030   Code   RO          324    i.UART1_R_Interr    usart.o
+    0x0000173c   0x0000173c   0x00000030   Code   RO          325    i.UART1_ReadBoxSUB  usart.o
+    0x0000176c   0x0000176c   0x00000002   Code   RO          327    i.UART1_try         usart.o
+    0x0000176e   0x0000176e   0x00000002   PAD
+    0x00001770   0x00001770   0x0000002c   Code   RO         1236    i.UartGetInternDataPtr  uart_1.o
+    0x0000179c   0x0000179c   0x0000003c   Code   RO         1238    i.Uart_ClrStatus    uart_1.o
+    0x000017d8   0x000017d8   0x00000024   Code   RO         1240    i.Uart_EnableFunc   uart_1.o
+    0x000017fc   0x000017fc   0x0000002e   Code   RO         1241    i.Uart_EnableIrq    uart_1.o
+    0x0000182a   0x0000182a   0x00000050   Code   RO         1244    i.Uart_IRQHandler   uart_1.o
+    0x0000187a   0x0000187a   0x00000002   PAD
+    0x0000187c   0x0000187c   0x00000090   Code   RO         1245    i.Uart_Init         uart_1.o
+    0x0000190c   0x0000190c   0x0000005a   Code   RO         1248    i.Uart_SetBaudRate  uart_1.o
+    0x00001966   0x00001966   0x00000024   Code   RO         1250    i.Uart_SetMode      uart_1.o
+    0x0000198a   0x0000198a   0x0000003e   Code   RO         1251    i.Uart_SetMultiMode  uart_1.o
+    0x000019c8   0x000019c8   0x00000010   Code   RO         1460    i.Wdt_Feed          wdt_1.o
+    0x000019d8   0x000019d8   0x00000024   Code   RO         1461    i.Wdt_IRQHandler    wdt_1.o
+    0x000019fc   0x000019fc   0x00000044   Code   RO         1462    i.Wdt_Init          wdt_1.o
+    0x00001a40   0x00001a40   0x00000014   Code   RO         1465    i.Wdt_Start         wdt_1.o
+    0x00001a54   0x00001a54   0x00000018   Code   RO         1466    i.Wdt_WriteWdtLoad  wdt_1.o
+    0x00001a6c   0x00001a6c   0x0000003c   Code   RO          438    i.ZeroDelay         tg.o
+    0x00001aa8   0x00001aa8   0x00000020   Code   RO          439    i.ZeroEX            tg.o
+    0x00001ac8   0x00001ac8   0x00000060   Code   RO          704    i._GpioEnableIrq    gpio_1.o
+    0x00001b28   0x00001b28   0x0000001a   Code   RO          783    i.__ARM_common_switch8  gpio_1.o
+    0x00001b42   0x00001b42   0x00000002   PAD
+    0x00001b44   0x00001b44   0x00000018   Code   RO         1255    i.__NVIC_ClearPendingIRQ  uart_1.o
+    0x00001b5c   0x00001b5c   0x00000044   Code   RO         1256    i.__NVIC_SetPriority  uart_1.o
+    0x00001ba0   0x00001ba0   0x00000002   Code   RO          615    i._sys_exit         ddl_1.o
+    0x00001ba2   0x00001ba2   0x00000002   PAD
+    0x00001ba4   0x00001ba4   0x00000038   Code   RO          233    i.crc_chk_value     sys.o
+    0x00001bdc   0x00001bdc   0x00000012   Code   RO          617    i.ddl_memclr        ddl_1.o
+    0x00001bee   0x00001bee   0x00000040   Code   RO          235    i.delay_us          sys.o
+    0x00001c2e   0x00001c2e   0x00000022   Code   RO          150    i.h595d_init        led.o
+    0x00001c50   0x00001c50   0x0000008e   Code   RO          151    i.h595d_write       led.o
+    0x00001cde   0x00001cde   0x00000002   PAD
+    0x00001ce0   0x00001ce0   0x00000040   Code   RO          515    i.init              main.o
+    0x00001d20   0x00001d20   0x00000040   Code   RO          237    i.io_init           sys.o
+    0x00001d60   0x00001d60   0x00000030   Code   RO          440    i.jishu_sub         tg.o
+    0x00001d90   0x00001d90   0x00000018   Code   RO           95    i.key_init          key.o
+    0x00001da8   0x00001da8   0x0000001e   Code   RO          152    i.led_set           led.o
+    0x00001dc6   0x00001dc6   0x00000002   PAD
+    0x00001dc8   0x00001dc8   0x00000014   Code   RO          153    i.led_shan          led.o
+    0x00001ddc   0x00001ddc   0x00000054   Code   RO          154    i.led_shan_sub      led.o
+    0x00001e30   0x00001e30   0x0000000a   Code   RO          516    i.main              main.o
+    0x00001e3a   0x00001e3a   0x00000034   Code   RO          156    i.relay_closeA_SBuf  led.o
+    0x00001e6e   0x00001e6e   0x00000002   PAD
+    0x00001e70   0x00001e70   0x00000038   Code   RO          158    i.relay_set         led.o
+    0x00001ea8   0x00001ea8   0x0000002c   Code   RO          563    i.timer0_Init       timers.o
+    0x00001ed4   0x00001ed4   0x0000001c   Code   RO          329    i.uart1_init        usart.o
+    0x00001ef0   0x00001ef0   0x00000028   Code   RO          238    i.wdog_init         sys.o
+    0x00001f18   0x00001f18   0x00000080   Code   RO         1517    i.xunSub_diao       xunsub.o
+    0x00001f98   0x00001f98   0x00000058   Code   RO         1519    i.xunSub_timer      xunsub.o
+    0x00001ff0   0x00001ff0   0x00000008   Data   RO          996    .constdata          clk_1.o
+    0x00001ff8   0x00001ff8   0x00000020   Data   RO         1774    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x00002018, Size: 0x00000bf8, Max: 0x00001000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x00002018   0x00000004   Data   RW            5    .data               system_hc32l110.o
+    0x20000004   0x0000201c   0x0000003c   Data   RW          159    .data               led.o
+    0x20000040   0x00002058   0x00000001   Data   RW          331    .data               usart.o
+    0x20000041   0x00002059   0x00000003   PAD
+    0x20000044   0x0000205c   0x0000001a   Data   RW          442    .data               tg.o
+    0x2000005e   0x00002076   0x00000002   PAD
+    0x20000060   0x00002078   0x0000000c   Data   RW         1155    .data               bt_1.o
+    0x2000006c   0x00002084   0x00000028   Data   RW         1257    .data               uart_1.o
+    0x20000094   0x000020ac   0x00000004   Data   RW         1389    .data               flash_1.o
+    0x20000098   0x000020b0   0x00000004   Data   RW         1467    .data               wdt_1.o
+    0x2000009c   0x000020b4   0x00000004   Data   RW         1521    .data               xunsub.o
+    0x200000a0   0x000020b8   0x00000002   Data   RW         1558    .data               relayapp.o
+    0x200000a2   0x000020ba   0x00000002   PAD
+    0x200000a4        -       0x000000cc   Zero   RW          239    .bss                sys.o
+    0x20000170        -       0x00000028   Zero   RW         1520    .bss                xunsub.o
+    0x20000198        -       0x00000060   Zero   RW         1651    .bss                c_p.l(libspace.o)
+    0x200001f8        -       0x00000200   Zero   RW           86    HEAP                startup_hc32l110.o
+    0x200003f8        -       0x00000800   Zero   RW           85    STACK               startup_hc32l110.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       716         42          0         12          0       4915   bt_1.o
+      1334        164          8          0          0      18751   clk_1.o
+        40          0          0          0          0       1724   ddl_1.o
+        12          6          0          4          0        587   flash_1.o
+       402         38          0          0          0       4318   gpio_1.o
+       390         16          0          0          0      20026   interrupts_hc32l110_1.o
+        76          6          0          0          0       5239   key.o
+       436         24          0         60          0       4841   led.o
+       102          8          0          0          0       1495   main.o
+       864         28          0          2          0       2791   relayapp.o
+        88         40        192          0       2560        608   startup_hc32l110.o
+       392          8          0          0        204       3875   sys.o
+        68         10          0          4          0      65603   system_hc32l110.o
+       732         62          0         26          0       4644   tg.o
+       192         14          0          0          0       1790   timers.o
+       690         24          0         40          0      15520   uart_1.o
+       444         40          0          1          0       3406   usart.o
+       164         36          0          4          0       2560   wdt_1.o
+       216         18          0          4         40       1547   xunsub.o
+
+    ----------------------------------------------------------------------
+      7376        584        232        164       2804     164240   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+        18          0          0          7          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         8          0          0          0          0         68   __main.o
+         0          0          0          0          0          0   __rtentry.o
+        12          0          0          0          0          0   __rtentry2.o
+         6          0          0          0          0          0   __rtentry4.o
+        60          8          0          0          0          0   __scatter.o
+        26          0          0          0          0          0   __scatter_copy.o
+        28          0          0          0          0          0   __scatter_zi.o
+       346          0          0          0          0         92   aeabi_sdiv.o
+        16          0          0          0          0         68   exit.o
+         6          0          0          0          0        136   heapauxi.o
+         2          0          0          0          0          0   libinit.o
+         2          0          0          0          0          0   libinit2.o
+         2          0          0          0          0          0   libshutdown.o
+         2          0          0          0          0          0   libshutdown2.o
+         8          4          0          0         96         68   libspace.o
+         2          0          0          0          0          0   rtexit.o
+        10          0          0          0          0          0   rtexit2.o
+        62          0          0          0          0         80   sys_stackheap_outer.o
+         2          0          0          0          0         68   use_no_semi.o
+         2          0          0          0          0         68   use_no_semi_2.o
+
+    ----------------------------------------------------------------------
+       608         12          0          0         96        648   Library Totals
+         6          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       602         12          0          0         96        648   c_p.l
+
+    ----------------------------------------------------------------------
+       608         12          0          0         96        648   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      7984        596        232        164       2900     159456   Grand Totals
+      7984        596        232        164       2900     159456   ELF Image Totals
+      7984        596        232        164          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                 8216 (   8.02kB)
+    Total RW  Size (RW Data + ZI Data)              3064 (   2.99kB)
+    Total ROM Size (Code + RO Data + RW Data)       8380 (   8.18kB)
+
+==============================================================================
+

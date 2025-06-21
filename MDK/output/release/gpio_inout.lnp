@@ -1,0 +1,25 @@
+--cpu Cortex-M0+
+".\output\release\system_hc32l110.o"
+".\output\release\startup_hc32l110.o"
+".\output\release\main.o"
+".\output\release\key.o"
+".\output\release\led.o"
+".\output\release\sys.o"
+".\output\release\timers.o"
+".\output\release\usart.o"
+".\output\release\strs.o"
+".\output\release\tg.o"
+".\output\release\ddl.o"
+".\output\release\gpio.o"
+".\output\release\interrupts_hc32l110.o"
+".\output\release\clk.o"
+".\output\release\bt.o"
+".\output\release\uart.o"
+".\output\release\flash.o"
+".\output\release\wdt.o"
+".\output\release\xunsub.o"
+".\output\release\relayapp.o"
+--strict --scatter ".\output\release\gpio_inout.sct"
+--keep=*Handler --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\output\release\gpio_inout.map" -o .\output\release\gpio_inout.axf
