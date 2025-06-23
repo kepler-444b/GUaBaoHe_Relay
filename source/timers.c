@@ -9,8 +9,7 @@ extern Pro_flag_s MCU_flag;
  ******************************************************************************/
 void Bt0Int(void)
 {
-    if (TRUE == Bt_GetIntFlag(TIM0))
-    {
+    if (TRUE == Bt_GetIntFlag(TIM0)) {
         Bt_ClearIntFlag(TIM0);
         TG_TimOVR();
         // TG_TimOVRKKG();
@@ -24,8 +23,8 @@ void App_Timer0Cfg(uint16_t u16Period)
 {
     stc_bt_config_t stcConfig;
     volatile en_result_t enResult = Error;
-    uint16_t u16ArrData = 0xffff - u16Period;
-    uint16_t u16InitCntData = 0xffff - u16Period;
+    uint16_t u16ArrData           = 0xffff - u16Period;
+    uint16_t u16InitCntData       = 0xffff - u16Period;
     // CLK INIT
     // stc_clk_config_t stcClkCfg;
     // stcClkCfg.enClkSrc  = ClkRCH;
@@ -41,11 +40,11 @@ void App_Timer0Cfg(uint16_t u16Period)
     // P25设置为门控使能IO
     // Gpio_SetFunc_TIM0_EXT_P34();
     stcConfig.enGateP = BtPositive;
-    stcConfig.enGate = BtGateDisable;
-    stcConfig.enPRS = BtPCLKDiv16;
-    stcConfig.enTog = BtTogDisable;
-    stcConfig.enCT = BtTimer;
-    stcConfig.enMD = BtMode2;
+    stcConfig.enGate  = BtGateDisable;
+    stcConfig.enPRS   = BtPCLKDiv16;
+    stcConfig.enTog   = BtTogDisable;
+    stcConfig.enCT    = BtTimer;
+    stcConfig.enMD    = BtMode2;
     // Bt初始化
     Bt_Init(TIM0, &stcConfig);
 
@@ -64,7 +63,7 @@ void timer0_Init(void)
 {
     // CLK INIT
     stc_clk_config_t stcClkCfg;
-    stcClkCfg.enClkSrc = ClkRCH;
+    stcClkCfg.enClkSrc  = ClkRCH;
     stcClkCfg.enHClkDiv = ClkDiv1;
     stcClkCfg.enPClkDiv = ClkDiv1;
 
@@ -81,8 +80,7 @@ void timer0_Init(void)
  ******************************************************************************/
 void Bt2Int(void)
 {
-    if (TRUE == Bt_GetIntFlag(TIM2))
-    {
+    if (TRUE == Bt_GetIntFlag(TIM2)) {
         Bt_ClearIntFlag(TIM2);
         TG_TimOVR();
         // TG_TimOVRKKG();
@@ -96,16 +94,16 @@ void App_Timer2Cfg(uint16_t u16Period)
 {
     stc_bt_config_t stcConfig;
     volatile en_result_t enResult = Error;
-    uint16_t u16ArrData = 0xffff - u16Period;
-    uint16_t u16InitCntData = 0xffff - u16Period;
+    uint16_t u16ArrData           = 0xffff - u16Period;
+    uint16_t u16InitCntData       = 0xffff - u16Period;
 
     stcConfig.pfnTim2Cb = Bt2Int;
-    stcConfig.enGateP = BtPositive;
-    stcConfig.enGate = BtGateDisable;
-    stcConfig.enPRS = BtPCLKDiv16;
-    stcConfig.enTog = BtTogDisable;
-    stcConfig.enCT = BtTimer;
-    stcConfig.enMD = BtMode2;
+    stcConfig.enGateP   = BtPositive;
+    stcConfig.enGate    = BtGateDisable;
+    stcConfig.enPRS     = BtPCLKDiv16;
+    stcConfig.enTog     = BtTogDisable;
+    stcConfig.enCT      = BtTimer;
+    stcConfig.enMD      = BtMode2;
     // Bt初始化
     Bt_Init(TIM2, &stcConfig);
 
@@ -124,7 +122,7 @@ void timer2_Init(void)
 {
     // CLK INIT
     stc_clk_config_t stcClkCfg;
-    stcClkCfg.enClkSrc = ClkRCH;
+    stcClkCfg.enClkSrc  = ClkRCH;
     stcClkCfg.enHClkDiv = ClkDiv1;
     stcClkCfg.enPClkDiv = ClkDiv1;
 

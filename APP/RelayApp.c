@@ -10,9 +10,8 @@ u16 GetRelaybuf10(u8 mac)
 {
     u8 x, y, i;
     u16 res = 0;
-    u8 cc = mac * 10;
-    for (i = 0; i < 10; i++)
-    {
+    u8 cc   = mac * 10;
+    for (i = 0; i < 10; i++) {
         x = (cc + i) / 8;
         y = (cc + i) % 8;
         if ((MCU_flag.ZMCU_relay[x] & (1 << y)) > 0)
@@ -25,9 +24,8 @@ u16 GetRelaybuf11(u8 mac)
 {
     u8 x, y, i;
     u16 res = 0;
-    u8 cc = mac * 11;
-    for (i = 0; i < 11; i++)
-    {
+    u8 cc   = mac * 11;
+    for (i = 0; i < 11; i++) {
         x = (cc + i) / 8;
         y = (cc + i) % 8;
         if ((MCU_flag.ZMCU_relay[x] & (1 << y)) > 0)
@@ -38,15 +36,13 @@ u16 GetRelaybuf11(u8 mac)
 
 void Relay_sub(void)
 {
-    u8 temp[6] = {0, 0, 0, 0, 0, 0};
+    u8 temp[6]  = {0, 0, 0, 0, 0, 0};
     u8 temp1[6] = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff};
-    u16 res = 0;
+    u16 res     = 0;
     if (MCU_flag.data_shua == 0)
         return;
-    if (Rcu_type == 0)
-    { // 豪华主机---自己按位
-        if (MCU_flag.MyMAC == 0)
-        {
+    if (Rcu_type == 0) { // 豪华主机---自己按位
+        if (MCU_flag.MyMAC == 0) {
             temp[0] = MCU_flag.ZMCU_relay[0];
             temp[1] = MCU_flag.ZMCU_relay[1];
             temp[2] = MCU_flag.ZMCU_relay[2] & 0x0f;
@@ -59,9 +55,7 @@ void Relay_sub(void)
             temp[1] = ~temp[1];
             temp[2] = (~temp[2]) & 0x1f;
             relay_closeA_SBuf(temp, 0);
-        }
-        else if (MCU_flag.MyMAC == 1)
-        {
+        } else if (MCU_flag.MyMAC == 1) {
             temp[0] = ((MCU_flag.ZMCU_relay[2] & 0xf0) >> 4) | ((MCU_flag.ZMCU_relay[3] << 4) & 0xf0);
             temp[1] = ((MCU_flag.ZMCU_relay[3] & 0xf0) >> 4) | ((MCU_flag.ZMCU_relay[4] << 4) & 0xf0);
             temp[2] = ((MCU_flag.ZMCU_relay[4] & 0xf0) >> 4) & 0x0f;
@@ -74,9 +68,17 @@ void Relay_sub(void)
             temp[1] = ~temp[1];
             temp[2] = (~temp[2]) & 0x1f;
             relay_closeA_SBuf(temp, 0);
-        }
-        else if (MCU_flag.MyMAC == 2)
-        {
+        } else if (MCU_flag.MyMAC == 2) {
+            temp[0] = ((MCU_flag.ZMCU_relay[3] & 0xc0) >> 6) | ((MCU_flag.ZMCU_relay[4] << 2) & 0xfc);
+            temp[1] = ((MCU_flag.ZMCU_relay[4] & 0xc0) >> 6) | ((MCU_flag.ZMCU_relay[5] << 2) & 0xfc);
+            // temp[2]=((MCU_flag.ZMCU_relay[4]&0xf0)>>4)&0x0f;
+
+            relay_closeA_SBuf(temp, 1);
+            temp[0] = ~temp[0];
+            temp[1] = ~temp[1];
+            // temp[2]=(~temp[2])&0x1f;
+            relay_closeA_SBuf(temp, 0);
+        } else if (MCU_flag.MyMAC == 3) {
             temp[0] = ((MCU_flag.ZMCU_relay[3] & 0xc0) >> 6) | ((MCU_flag.ZMCU_relay[4] << 2) & 0xfc);
             temp[1] = ((MCU_flag.ZMCU_relay[4] & 0xc0) >> 6) | ((MCU_flag.ZMCU_relay[5] << 2) & 0xfc);
             // temp[2]=((MCU_flag.ZMCU_relay[4]&0xf0)>>4)&0x0f;
@@ -87,53 +89,32 @@ void Relay_sub(void)
             // temp[2]=(~temp[2])&0x1f;
             relay_closeA_SBuf(temp, 0);
         }
-        else if (MCU_flag.MyMAC == 3)
-        {
-            temp[0] = ((MCU_flag.ZMCU_relay[3] & 0xc0) >> 6) | ((MCU_flag.ZMCU_relay[4] << 2) & 0xfc);
-            temp[1] = ((MCU_flag.ZMCU_relay[4] & 0xc0) >> 6) | ((MCU_flag.ZMCU_relay[5] << 2) & 0xfc);
-            // temp[2]=((MCU_flag.ZMCU_relay[4]&0xf0)>>4)&0x0f;
-
-            relay_closeA_SBuf(temp, 1);
-            temp[0] = ~temp[0];
-            temp[1] = ~temp[1];
-            // temp[2]=(~temp[2])&0x1f;
-            relay_closeA_SBuf(temp, 0);
-        }
-    }
-    else if (Rcu_type == 1)
-    { // 新款主机
-        if (MCU_flag.MyMAC == 0)
-        {
+    } else if (Rcu_type == 1) { // 新款主机
+        if (MCU_flag.MyMAC == 0) {
             relay_closeA_SBuf(temp1, 0);
             temp[0] = MCU_flag.ZMCU_relay[0];
             temp[1] = MCU_flag.ZMCU_relay[1];
             relay_closeA_SBuf(temp, 1);
-        }
-        else if (MCU_flag.MyMAC == 1)
-        {
+        } else if (MCU_flag.MyMAC == 1) {
             relay_closeA_SBuf(temp1, 0);
             temp[0] = (MCU_flag.ZMCU_relay[1] >> 2) | (MCU_flag.ZMCU_relay[2] << 6);
             temp[1] = (MCU_flag.ZMCU_relay[2] >> 2);
             relay_closeA_SBuf(temp, 1);
-        }
-        else if (MCU_flag.MyMAC == 2)
-        {
+        } else if (MCU_flag.MyMAC == 2) {
             relay_closeA_SBuf(temp1, 0);
             temp[0] = (MCU_flag.ZMCU_relay[2] >> 4) | (MCU_flag.ZMCU_relay[3] << 4);
             temp[1] = (MCU_flag.ZMCU_relay[3] >> 4);
             relay_closeA_SBuf(temp, 1);
         }
-    }
-    else if (Rcu_type == 2)
-    { // 豪华主机按拨码计算
+    } else if (Rcu_type == 2) { // 豪华主机按拨码计算
         relay_closeA_SBuf(temp1, 0);
         // res=GetRelaybuf10(MCU_flag.MyMAC);
-        res = GetRelaybuf11(MCU_flag.MyMAC);
+        res     = GetRelaybuf11(MCU_flag.MyMAC);
         temp[0] = res & 0xff;
         temp[1] = (res & 0xff00) >> 8;
         relay_closeA_SBuf(temp, 1);
     }
-    h595d_write(MCU_flag.H595D_buf, 3);
+    // h595d_write(MCU_flag.H595D_buf, 3); // 2025.6.23(两路可控硅调光扩展板增加继电器,引脚冲突,故而屏蔽此行)
     MCU_flag.data_shua = 0;
 }
 
@@ -144,14 +125,16 @@ void RcuData_rev(u8 *dat)
 {
     u16 crc16;
     u8 crc = GetCheckHe(dat, 12);
+#if 0
     u8 sends[10];
-    if ((crc == dat[12]) & (dat[0] == 0xfb))
+#endif
+    if ((crc == dat[12]) & (dat[0] == 0xfb)) // 宝盒系列,帧头为0xfb
     {
         led_shan(3, 50);
+        // char temp[12];
         // Rcu_type=0;
-        if (dat[1] == 1)
+        if (dat[1] == 1) // 固定指令
         {
-
             MCU_flag.ZMCU_relay[0] = dat[2];
             MCU_flag.ZMCU_relay[1] = dat[3];
             MCU_flag.ZMCU_relay[2] = dat[4];
@@ -174,12 +157,11 @@ void RcuData_rev(u8 *dat)
                 MCU_flag.ZMCU_TG[3] = 208;
             else
                 MCU_flag.ZMCU_TG[3] = dat[11];
-            MCU_flag.data_shua = 1;
+            MCU_flag.data_shua  = 1;
             MCU_flag.tg_init_ci = 0;
         }
     }
-    if ((dat[0] == 0xfb) & (dat[1] == 0x1) & (dat[12] == 0xce) & (dat[13] == 0xec))
-    {
+    if ((dat[0] == 0xfb) & (dat[1] == 0x1) & (dat[12] == 0xce) & (dat[13] == 0xec)) {
         led_shan(3, 50);
         MCU_flag.ZMCU_relay[0] = dat[2];
         MCU_flag.ZMCU_relay[1] = dat[3];
@@ -187,16 +169,14 @@ void RcuData_rev(u8 *dat)
         MCU_flag.ZMCU_relay[3] = dat[5];
         MCU_flag.ZMCU_relay[4] = dat[6];
         MCU_flag.ZMCU_relay[5] = dat[7];
-        MCU_flag.ZMCU_TG[0] = dat[8];
-        MCU_flag.ZMCU_TG[1] = dat[9];
-        MCU_flag.ZMCU_TG[2] = dat[10];
-        MCU_flag.ZMCU_TG[3] = dat[11];
-        MCU_flag.ZMCU_TGSuDu = dat[12];
-        MCU_flag.data_shua = 1;
-        MCU_flag.tg_init_ci = 0;
-    }
-    else if ((dat[0] == 0x5a) & (dat[1] == 0x29))
-    {
+        MCU_flag.ZMCU_TG[0]    = dat[8];
+        MCU_flag.ZMCU_TG[1]    = dat[9];
+        MCU_flag.ZMCU_TG[2]    = dat[10];
+        MCU_flag.ZMCU_TG[3]    = dat[11];
+        MCU_flag.ZMCU_TGSuDu   = dat[12];
+        MCU_flag.data_shua     = 1;
+        MCU_flag.tg_init_ci    = 0;
+    } else if ((dat[0] == 0x5a) & (dat[1] == 0x29)) {
         crc16 = crc_chk_value(dat, 27);
         if (crc16 != (dat[27] * 256 + dat[28]))
             return;
@@ -229,12 +209,11 @@ void RcuData_rev(u8 *dat)
         // MCU_flag.ZMCU_TGSuDu=dat[26];
         // jishu_clear();
         MCU_flag.tg_init_ci = 0;
-        MCU_flag.data_shua = 1;
-    }
-    else if ((dat[0] == 0xa1) & (dat[1] == 0xa2) & (dat[2] == 0xa3))
-    { // 调试过零
+        MCU_flag.data_shua  = 1;
+    } else if ((dat[0] == 0xa1) & (dat[1] == 0xa2) & (dat[2] == 0xa3)) { // 调试过零
         led_shan(3, 50);
         return;
+#if 0
         MCU_flag.fa_zhi = dat[3] * 256 + dat[4];
         MCU_flag.fa_zhi30a = dat[5] * 256 + dat[6];
         sends[0] = 0x7f;
@@ -243,11 +222,11 @@ void RcuData_rev(u8 *dat)
         sends[3] = MCU_flag.fa_zhi30a / 256;
         sends[4] = MCU_flag.fa_zhi30a % 256;
         UART1_SendBox(sends, 5);
-    }
-    else if ((dat[0] == 0xa1) & (dat[1] == 0xa3))
-    { // 调试过零
+#endif
+    } else if ((dat[0] == 0xa1) & (dat[1] == 0xa3)) { // 调试过零
         led_shan(3, 50);
         return;
+#if 0
         MCU_flag.ZMCU_relay[0] = dat[2];
         MCU_flag.ZMCU_relay[1] = dat[3];
         MCU_flag.ZMCU_relay[2] = dat[4];
@@ -266,32 +245,47 @@ void RcuData_rev(u8 *dat)
         sends[3] = MCU_flag.fa_zhi30a / 256;
         sends[4] = MCU_flag.fa_zhi30a % 256;
         UART1_SendBox(sends, 5);
+#endif
     }
 }
 
 u8 opens = 0;
 void relay_try(void)
 {
-    if (opens == 0)
-    {
-        opens = 1;
+    if (opens == 0) {
+        opens                  = 1;
         MCU_flag.ZMCU_relay[0] = 0xff;
         MCU_flag.ZMCU_relay[1] = 0xff;
         MCU_flag.ZMCU_relay[2] = 0xff;
         MCU_flag.ZMCU_relay[3] = 0xff;
         MCU_flag.ZMCU_relay[4] = 0xff;
         MCU_flag.ZMCU_relay[5] = 0xff;
-        MCU_flag.data_shua = 1;
-    }
-    else
-    {
-        opens = 0;
+        MCU_flag.data_shua     = 1;
+    } else {
+        opens                  = 0;
         MCU_flag.ZMCU_relay[0] = 0;
         MCU_flag.ZMCU_relay[1] = 0;
         MCU_flag.ZMCU_relay[2] = 0;
         MCU_flag.ZMCU_relay[3] = 0;
         MCU_flag.ZMCU_relay[4] = 0;
         MCU_flag.ZMCU_relay[5] = 0;
-        MCU_flag.data_shua = 1;
+        MCU_flag.data_shua     = 1;
+    }
+}
+
+void switch_relay(void) // 2025.6.23 新增(两路可控硅调光扩展板)继电器
+{
+    if ((MCU_flag.ZMCU_TG[0] == 208 && MCU_flag.ZMCU_TG[2] == 208) || // MAC(拨码为0或1时的 T1路调光)
+        (MCU_flag.ZMCU_TG[0] == 0 && MCU_flag.ZMCU_TG[2] == 0)) {     // 上电关闭继电器
+        RELAY1_L;
+    } else {
+        RELAY1_H;
+    }
+
+    if ((MCU_flag.ZMCU_TG[1] == 208 && MCU_flag.ZMCU_TG[3] == 208) || // MAC(拨码为0或1时的 T2路调光)
+        (MCU_flag.ZMCU_TG[1] == 0 && MCU_flag.ZMCU_TG[3] == 0)) {     // 上电关闭继电器
+        RELAY2_L;
+    } else {
+        RELAY2_H;
     }
 }

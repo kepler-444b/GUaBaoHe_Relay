@@ -43,8 +43,7 @@ void init(void)
 void Thread_Ms_sub(void)
 {
     // u8 temp;
-    if (MCU_flag.ms_flag >= 33)
-    {
+    if (MCU_flag.ms_flag >= 33) {
         xunSub_diao();
         Wdt_Feed();
         MCU_flag.ms_flag = 0;
@@ -52,8 +51,7 @@ void Thread_Ms_sub(void)
 }
 void Thread_Ms100_sub(void)
 {
-    if (MCU_flag.ms100_flag >= 1000)
-    {
+    if (MCU_flag.ms100_flag >= 1000) {
 
         MCU_flag.ms100_flag = 0;
     }
@@ -68,8 +66,7 @@ int32_t main(void)
 
     init();
 
-    while (1)
-    {
+    while (1) {
         Thread_Ms_sub();
     }
 }
